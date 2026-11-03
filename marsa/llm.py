@@ -1,7 +1,7 @@
 """LLM backends. Everything downstream treats the model as untrusted: output is parsed, gated and logged."""
 import hashlib, json, os, re, urllib.request
 SCHEMA={"type":"object","properties":{"reasoning":{"type":"string","maxLength":240},"position":{"type":"string","enum":["support","oppose","conditional","no_position"]},
- "recommendation":{"type":"string","maxLength":260},"claims":{"type":"array","maxItems":3,"items":{"type":"object","properties":{"claim":{"type":"string","maxLength":170},"sentence":{"type":"integer"}},"required":["claim","sentence"]}}},
+ "recommendation":{"type":"string","maxLength":260},"claims":{"type":"array","minItems":1,"maxItems":3,"items":{"type":"object","properties":{"claim":{"type":"string","minLength":25,"maxLength":170},"sentence":{"type":"integer"}},"required":["claim","sentence"]}}},
  "required":["reasoning","position","recommendation","claims"]}
 def repair(t):
     """Local models can stop mid-JSON at the token limit. Keep complete claims and drop the rest."""

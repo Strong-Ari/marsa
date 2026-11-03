@@ -24,9 +24,9 @@ def test_audit_tamper_detected():
     t=p.read_text().replace('"i": 2','"i": 9'); p.write_text(t); assert verify(p)==(False,2)
 def test_evidence_gate():
     got={"D#1":{"text":"The Authority shall exercise its functions and powers under this law."}}
-    assert evidence.check({"claim":"c","cid":"D#1","quote":"exercise its functions and powers"},got)[0]
-    assert not evidence.check({"claim":"c","cid":"D#1","quote":"exercise its emergency powers over all"},got)[0]
-    assert not evidence.check({"claim":"c","cid":"D#2","quote":"exercise its functions and powers"},got)[0]
+    assert evidence.check({"claim":"A claim long enough to pass","cid":"D#1","quote":"exercise its functions and powers"},got)[0]
+    assert not evidence.check({"claim":"A claim long enough to pass","cid":"D#1","quote":"exercise its emergency powers over all"},got)[0]
+    assert not evidence.check({"claim":"A claim long enough to pass","cid":"D#2","quote":"exercise its functions and powers"},got)[0]
 
 def test_unconfirmed_cause_rejected_even_with_real_quote():
     got={"D#1":{"text":"Effective investigation depends on the existence of clear rules for all parties."}}

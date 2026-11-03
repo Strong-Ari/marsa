@@ -1,10 +1,64 @@
 {
- "runs/injected": {
-  "on_mandate": "16/16",
-  "with_claims": "16/16",
-  "adviser_on_topic": "5/5",
-  "missed": [],
-  "verified": 60,
+ "runs/qwen7": {
+  "on_mandate": "13/16",
+  "with_claims": "13/16",
+  "adviser_on_topic": "0/0",
+  "missed": [
+   [
+    "E2",
+    "regulator"
+   ],
+   [
+    "E3",
+    "health"
+   ],
+   [
+    "E5",
+    "crisis"
+   ]
+  ],
+  "verified": 19,
+  "rejected": 33
+ },
+ "runs/final": {
+  "on_mandate": "8/16",
+  "with_claims": "8/16",
+  "adviser_on_topic": "1/5",
+  "missed": [
+   [
+    "E1",
+    "netops"
+   ],
+   [
+    "E2",
+    "regulator"
+   ],
+   [
+    "E3",
+    "health"
+   ],
+   [
+    "E4",
+    "netops"
+   ],
+   [
+    "E4",
+    "privacy"
+   ],
+   [
+    "E6",
+    "regulator"
+   ],
+   [
+    "J1",
+    "netops"
+   ],
+   [
+    "J1",
+    "regulator"
+   ]
+  ],
+  "verified": 19,
   "rejected": 0
  }
 }

@@ -6,7 +6,7 @@ def _n(t):
     return re.sub(r"\s+"," ",t).strip().lower()
 def check(claim, retrieved):
     q,c=claim.get("quote") or "",claim.get("cid")
-    if not claim.get("claim"): return False,"empty_claim"
+    if len((claim.get("claim") or "").strip())<20: return False,"empty_claim"
     if c not in retrieved: return False,"source_not_retrieved"
     if len(_n(q))<MIN_QUOTE: return False,"quote_too_short"
     if _n(q) not in _n(retrieved[c]["text"]): return False,"quote_not_verbatim"
