@@ -66,7 +66,7 @@ const bars=Object.entries(E.served).map(([k,v])=>`<div class="bar"><span>${k}</s
 $("#view").innerHTML=`<div style="display:grid;gap:14px"><div class="row"><button class="btn" id="inj">${inj?"Remove the judge's event":"Add a judge's event"}</button></div>
 <div class="rail">${R.events.map((e,i)=>`<button class="tick ${e.id[0]=="J"?"j":""}" aria-current="${i==idx}" data-i="${i}">T+${e.t}</button>`).join("")}</div>
 <div class="grid"><div class="col"><div class="sheet"><div class="meta">${esc(E.id)} · minute ${E.t} · sent to ${esc(E.to.join(", "))}</div><h2>${esc(E.text)}</h2></div><div class="sheet"><h3>Gateway decisions</h3>${dec}</div></div>
-<div class="col"><div class="sheet"><h3>Traffic served</h3><div class="meta">Capacity ${E.capacity} Gbps, synthetic model</div>${bars}</div><div class="sheet"><h3>Agent assessments</h3>${ag}</div></div></div></div>`;
+<div class="col"><div class="sheet"><h3>Traffic served</h3><div class="meta">Capacity ${E.capacity} Gbps, synthetic model</div>${bars}</div><div class="sheet"><h3>Agent assessments</h3>${E.disagreement?`<p><span class="stamp HOLD">SPLIT</span> Agents disagree on this action.</p>`:""}${ag}</div></div></div></div>`;
 $("#inj").onclick=()=>{inj=!inj;idx=inj?run().events.findIndex(e=>e.id[0]=="J"):0;render()};
 $(".rail").onclick=e=>{if(e.target.dataset.i){idx=+e.target.dataset.i;render()}};}
 const P={type:{reroute:"Reroute traffic",prioritise:"Prioritise a class",throttle:"Slow a class",failover_compute:"Fail compute over",store_abroad:"Store data abroad",share_telemetry:"Share telemetry",repair_request:"Request repair clearance",public_statement:"Publish a statement",reclassify:"Reclassify traffic",rollback:"Roll back a change",other:"Something new"},

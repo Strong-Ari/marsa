@@ -1,0 +1,1207 @@
+{
+ "scenario": {
+  "id": "dual_cable_loss",
+  "title": "Dual subsea cable loss during peak demand",
+  "note": "Fictional exercise. Network figures are synthetic. Institutions are simulated roles and do not represent any real body's position."
+ },
+ "backend": "q7.gguf",
+ "events": [
+  {
+   "id": "E1",
+   "t": 0,
+   "text": "Loss of light on the EAST subsea path. Cause unknown. Capacity falls by 1100 Gbps.",
+   "to": [
+    "netops"
+   ],
+   "assessments": [
+    {
+     "agent": "netops",
+     "name": "Network Operations Planner",
+     "position": "no_position",
+     "actions": [],
+     "recommendation": "The missing information includes the specific geographic diversity of cables, terrestrial backhaul, or cloud-based systems that should be used for rerouting, as well as the current network topology and available resources.",
+     "reasoning": "The most relevant information within the mandate is the need for automated traffic rerouting as stated in sentence 2. However, the specific details on how to implement this for the current situation are missing.",
+     "claims": [
+      {
+       "claim": "Operators should implement automated traffic rerouting to geographically diverse cables, terrestrial backhaul, or cloud-based systems.",
+       "quote": "176 At the network layer, operators should implement automated traffic rerouting to geographically diverse cables, terrestrial backhaul, or cloud-based systems.",
+       "cid": "ITU-IAB-2026#320",
+       "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
+       "jurisdiction": "Global",
+       "force": "soft_law",
+       "url": "https://www.itu.int/dms_pub/itu-s/opb/iab/S-IAB-WG-2026-EPB-E.epub",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "ITU-IAB-2026#320",
+      "ITU-Y3172#10",
+      "ITU-Y3173#28",
+      "ITU-IAB-2026#129"
+     ]
+    }
+   ],
+   "decisions": [],
+   "positions": {},
+   "disagreement": false,
+   "capacity": 935,
+   "served": {
+    "emergency": 0.401,
+    "clinical": 0.401,
+    "government": 0.401,
+    "payments": 0.401,
+    "enterprise": 0.401,
+    "consumer": 0.401
+   }
+  },
+  {
+   "id": "E2",
+   "t": 12,
+   "text": "WEST subsea path degraded to 30 percent after a second fault. Remaining capacity cannot carry peak demand.",
+   "to": [
+    "netops",
+    "regulator"
+   ],
+   "assessments": [
+    {
+     "agent": "netops",
+     "name": "Network Operations Planner",
+     "position": "support",
+     "actions": [
+      "A1",
+      "A2"
+     ],
+     "recommendation": "operators should implement automated traffic rerouting to geographically diverse cables, terrestrial backhaul, or cloud-based systems.",
+     "reasoning": "The proposed action aligns with the recommendation to implement automated traffic rerouting to geographically diverse cables, terrestrial backhaul, or cloud-based systems. Sentence 2 directly supports the proposed action by recommending the",
+     "claims": [
+      {
+       "claim": "2. [International Advisory Body on Submarine Cable Resilience: R; soft_law] At the network layer, operators should implement automated traffic rerouting to geographically",
+       "quote": "176 At the network layer, operators should implement automated traffic rerouting to geographically diverse cables, terrestrial backhaul, or cloud-based systems.",
+       "cid": "ITU-IAB-2026#320",
+       "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
+       "jurisdiction": "Global",
+       "force": "soft_law",
+       "url": "https://www.itu.int/dms_pub/itu-s/opb/iab/S-IAB-WG-2026-EPB-E.epub",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "ITU-IAB-2026#320",
+      "ITU-Y3172#10",
+      "ITU-Y3173#27",
+      "ITU-IAB-2026#309"
+     ]
+    },
+    {
+     "agent": "regulator",
+     "name": "Telecom Regulator (simulated)",
+     "position": "support",
+     "actions": [
+      "A1",
+      "A2"
+     ],
+     "recommendation": "Article (14) Considering Articles (3) and (12) of this Federal Law by Decree the Authority shall have the power to issue regulations, orders, resolutions and procedures in relation to:",
+     "reasoning": "The proposed action aligns with the Federal Law by Decree No. 3 of 2003 (Telecom Law), which grants the authority the power to issue regulations, orders, resolutions, and procedures in relation to maintaining service quality. Sentence 1 is ",
+     "claims": [
+      {
+       "claim": "Article (14) of the Federal Law by Decree No. 3 of 2003 (Telecom Law) grants the authority the power to issue regulations, orders, resolutions, and procedures in relation",
+       "quote": "Article (14) Considering Articles (3) and (12) of this Federal Law by Decree the Authority shall have the power to issue regulations, orders, resolutions and procedures in relation to:",
+       "cid": "UAE-TEL-2003#24",
+       "title": "Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 2005",
+       "jurisdiction": "UAE",
+       "force": "binding",
+       "url": "https://www.wipo.int/wipolex/en/legislation/details/13893",
+       "locator": "Article (14"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-TEL-2003#24",
+      "ITU-IAB-2026#218",
+      "ITU-IAB-2026#303"
+     ]
+    },
+    {
+     "agent": "adviser",
+     "name": "Global Policy Adviser",
+     "position": "no_position",
+     "actions": [
+      "A2"
+     ],
+     "recommendation": "The local texts should consider implementing measures to protect emergency and clinical classes, and manage consumer video traffic, similar to the practices in the US and EU.",
+     "reasoning": "The local texts are silent on this action, but several jurisdictions have relevant practices. The US and EU have regulations that address prioritization and management of telecommunications services during emergencies. India has a specific ",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "IN-TEL-S20#0",
+      "US-TSP#0",
+      "EU-OIR-A3#4",
+      "UK-CA-132#0",
+      "EU-AIA-ANNEX3#8"
+     ],
+     "for_action": "A2"
+    }
+   ],
+   "decisions": [
+    {
+     "action": "A1",
+     "verdict": "ALLOW",
+     "legal_status": "clear",
+     "rules": [
+      "R-ROUTE-DOMESTIC"
+     ],
+     "approver": [],
+     "citations": [
+      {
+       "doc": "UAE-TEL-2003",
+       "locator": "Art. 13(1)",
+       "quote": "are sufficient to satisfy the public demands of those who wish to make use of such services"
+      }
+     ],
+     "gaps": [],
+     "reasons": [
+      "Rerouting inside licensed capacity carries no cross-border data question."
+     ],
+     "description": "Move general traffic onto surviving domestic-landing capacity",
+     "human": null,
+     "applied": true
+    },
+    {
+     "action": "A2",
+     "verdict": "HOLD",
+     "legal_status": "silent",
+     "rules": [
+      "R-PRIORITY",
+      "R-AUTONOMY"
+     ],
+     "approver": [
+      "crisis_authority",
+      "human_duty_officer",
+      "regulator"
+     ],
+     "citations": [
+      {
+       "doc": "UAE-TEL-2003",
+       "locator": "Art. 14(3)",
+       "quote": "the terms and level of services provided by the Licensees to users, including the standards and quality of service provided"
+      },
+      {
+       "doc": "EU-OIR-A3",
+       "locator": "Art. 3(3)(c), comparative",
+       "quote": "provided that equivalent categories of traffic are treated equally"
+      },
+      {
+       "doc": "EU-AIA-ANNEX3",
+       "locator": "Annex III point 2",
+       "quote": "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"
+      },
+      {
+       "doc": "EU-AIA-ART14",
+       "locator": "Art. 14(4)(d)",
+       "quote": "or to otherwise disregard, override or reverse the output of the high-risk AI system"
+      },
+      {
+       "doc": "ITU-Y3173",
+       "locator": "Table 7-1",
+       "quote": "Action implementation process is performed fully by a human being"
+      }
+     ],
+     "gaps": [
+      "G2",
+      "G4"
+     ],
+     "reasons": [
+      "No emergency priority power was found in the Telecom Law text; the regulator's general service powers are the nearest footing.",
+      "AI output steering critical infrastructure needs a human able to override it. No UAE instrument found sets this for networks, so MARSA applies the stricter global pattern."
+     ],
+     "description": "Protect emergency and clinical classes, slow consumer video",
+     "human": {
+      "decision": "approve",
+      "by": "human_duty_officer",
+      "note": "Time-limited to 6 hours and logged as an emergency measure."
+     },
+     "applied": true
+    }
+   ],
+   "positions": {
+    "netops": "support",
+    "regulator": "support",
+    "adviser": "no_position"
+   },
+   "disagreement": false,
+   "capacity": 305,
+   "served": {
+    "emergency": 1.0,
+    "clinical": 1.0,
+    "government": 0.808,
+    "payments": 0.022,
+    "enterprise": 0.022,
+    "consumer": 0.022
+   }
+  },
+  {
+   "id": "E3",
+   "t": 25,
+   "text": "Hospitals report teleradiology and remote intensive care links timing out. Clinicians ask how long this will last.",
+   "to": [
+    "health"
+   ],
+   "assessments": [
+    {
+     "agent": "health",
+     "name": "Health Authority (simulated)",
+     "position": "no_position",
+     "actions": [],
+     "recommendation": "More information is needed on the specific impact of the timing out on patient care and the nature of the data being transferred.",
+     "reasoning": "The critical point is whether the teleradiology and remote intensive care links timing out affect the continuity of care and the handling of health data. The mandate here is to ensure continuity of care and compliance with health-data rules",
+     "claims": [
+      {
+       "claim": "Health data related to the services provided in the UAE must be stored and processed within the country.",
+       "quote": "The health information and data related to the health services provided in the State may not be stored, processed,",
+       "cid": "UAE-EXTRACTS#2",
+       "title": "UAE health-data and personal-data statutes, curated verbatim extracts",
+       "jurisdiction": "UAE",
+       "force": "binding",
+       "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+       "locator": "Article 13"
+      },
+      {
+       "claim": "Exceptions to health-data transfer outside the UAE include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE, ph",
+       "quote": "The listed bases include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE state, pharmacovigilance, online health services, personal health devices and patient request.",
+       "cid": "HEALTH-NOTES#0",
+       "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://cms.law/en/are/legal-updates/uae-health-data-new-data-transfer-permissions",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 1,
+     "retrieved": [
+      "UAE-EXTRACTS#2",
+      "HEALTH-NOTES#0"
+     ]
+    }
+   ],
+   "decisions": [],
+   "positions": {},
+   "disagreement": false,
+   "capacity": 305,
+   "served": {
+    "emergency": 1.0,
+    "clinical": 1.0,
+    "government": 0.808,
+    "payments": 0.022,
+    "enterprise": 0.022,
+    "consumer": 0.022
+   }
+  },
+  {
+   "id": "E4",
+   "t": 40,
+   "text": "The planner finds that clinical traffic can only keep its latency target over the NORTH path, which crosses a neighbouring state. Traffic is encrypted and not stored there.",
+   "to": [
+    "netops",
+    "health",
+    "privacy"
+   ],
+   "assessments": [
+    {
+     "agent": "netops",
+     "name": "Network Operations Planner",
+     "position": "oppose",
+     "actions": [
+      "A3",
+      "A4"
+     ],
+     "recommendation": "The traffic should be rerouted to comply with the Health Authority's requirement.",
+     "reasoning": "The Health Authority requires that health data be stored and processed within the UAE, and the proposed action involves sending encrypted clinical traffic through a neighbouring state. This action does not comply with the Health Authority's",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "ITU-IAB-2026#320",
+      "ITU-Y3172#46",
+      "ITU-Y3173#10",
+      "ITU-IAB-2026#216"
+     ]
+    },
+    {
+     "agent": "health",
+     "name": "Health Authority (simulated)",
+     "position": "oppose",
+     "actions": [
+      "A3",
+      "A4"
+     ],
+     "recommendation": "The encrypted clinical traffic should not be sent over the NORTH path through the neighbouring state, and teleradiology AI should not be failed over to a foreign cloud region.",
+     "reasoning": "The health data must be stored and processed within the UAE, with exceptions that do not apply to this situation. Therefore, the proposed action cannot be supported.",
+     "claims": [
+      {
+       "claim": "Health data related to the services provided in the UAE must be stored and processed within the country.",
+       "quote": "The health information and data related to the health services provided in the State may not be stored, processed,",
+       "cid": "UAE-EXTRACTS#2",
+       "title": "UAE health-data and personal-data statutes, curated verbatim extracts",
+       "jurisdiction": "UAE",
+       "force": "binding",
+       "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+       "locator": "Article 13"
+      },
+      {
+       "claim": "Exceptions to health-data transfer outside the UAE do not include the specific scenarios presented.",
+       "quote": "The listed bases include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE state, pharmacovigilance, online health services, personal health devices and patient request.",
+       "cid": "HEALTH-NOTES#0",
+       "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://cms.law/en/are/legal-updates/uae-health-data-new-data-transfer-permissions",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-EXTRACTS#2",
+      "HEALTH-NOTES#0"
+     ]
+    },
+    {
+     "agent": "privacy",
+     "name": "Data Protection Office (simulated)",
+     "position": "oppose",
+     "actions": [
+      "A3",
+      "A4"
+     ],
+     "recommendation": "Further assessment is needed to determine if the teleradiology AI transfer can be justified under any of the exceptions provided by the Health Authority.",
+     "reasoning": "The traffic is encrypted and not stored, thus not violating Article 1 of the UAE statutes. However, the transfer of health data outside the UAE is generally prohibited unless it falls under an exception, and the specific scenarios presented",
+     "claims": [
+      {
+       "claim": "1 does not apply as the data is not disseminated, used, displayed, transmitted, received, retrieved, shared, or processed outside the State.",
+       "quote": "Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State.",
+       "cid": "UAE-EXTRACTS#6",
+       "title": "UAE health-data and personal-data statutes, curated verbatim extracts",
+       "jurisdiction": "UAE",
+       "force": "binding",
+       "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+       "locator": "Article 1"
+      }
+     ],
+     "rejected": 1,
+     "retrieved": [
+      "UAE-EXTRACTS#6",
+      "PDPL-NOTES#0",
+      "EDPB-05-2021#3"
+     ]
+    },
+    {
+     "agent": "adviser",
+     "name": "Global Policy Adviser",
+     "position": "no_position",
+     "actions": [
+      "A3"
+     ],
+     "recommendation": "The local texts do not specify whether encrypted clinical traffic can be sent over borders. The Health Authority (simulated) and the Data Protection Office (simulated) do not provide clear guidance on this specific action. Therefore, more specific local laws,3",
+     "reasoning": "The local texts are ambiguous on this action, and there is no direct support or opposition in the provided local texts. However, the Health Authority (simulated) and the Data Protection Office (simulated) indicate that health data must be处理",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "IN-TEL-S20#0",
+      "US-TSP#12",
+      "EU-OIR-A3#4",
+      "UK-CA-132#5",
+      "EU-AIA-ANNEX3#8"
+     ],
+     "for_action": "A3"
+    }
+   ],
+   "decisions": [
+    {
+     "action": "A3",
+     "verdict": "HOLD",
+     "legal_status": "ambiguous",
+     "rules": [
+      "R-HEALTH-TRANSIT",
+      "R-PERSONAL-TRANSIT"
+     ],
+     "approver": [
+      "data_office",
+      "health_authority",
+      "regulator"
+     ],
+     "citations": [
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Federal Law 2/2019 Art. 13",
+       "quote": "generated or transferred outside the State, unless in the cases defined by virtue of a decision issued"
+      },
+      {
+       "doc": "EDPB-05-2021",
+       "locator": "para. 9, p. 7",
+       "quote": "identified the following three cumulative criteria to qualify a processing operation as a transfer"
+      },
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Decree-Law 45/2021 Art. 1",
+       "quote": "Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State."
+      },
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Decree-Law 45/2021 Art. 23",
+       "quote": "If the transfer is necessary to protect the public interest."
+      }
+     ],
+     "gaps": [
+      "G1"
+     ],
+     "reasons": [
+      "The statute bars transfer outside the State but does not say whether encrypted transit through a foreign network is a transfer.",
+      "Cross-border processing is defined to include transmission outside the State; the public-interest route needs a named decision-maker."
+     ],
+     "description": "Send encrypted clinical traffic over NORTH through the neighbouring state",
+     "human": {
+      "decision": "approve_conditional",
+      "by": "human_duty_officer",
+      "note": "Approved for encrypted transit only, 6 hours, no storage abroad, pending the Health Authority's review."
+     },
+     "applied": true
+    },
+    {
+     "action": "A4",
+     "verdict": "DENY",
+     "legal_status": "clear",
+     "rules": [
+      "R-HEALTH-STORE-ABROAD"
+     ],
+     "approver": [
+      "health_authority"
+     ],
+     "citations": [
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Federal Law 2/2019 Art. 13",
+       "quote": "The health information and data related to the health services provided in the State may not be stored, processed,"
+      },
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Federal Law 2/2019 Art. 24",
+       "quote": "Whoever violates the provisions of Article (13) of this Law shall be punished by a fine of not less than"
+      }
+     ],
+     "gaps": [],
+     "reasons": [
+      "Storing or processing health data abroad is barred unless a Health Authority decision defines the case."
+     ],
+     "description": "Fail teleradiology AI over to a foreign cloud region",
+     "human": null,
+     "applied": false
+    }
+   ],
+   "positions": {
+    "netops": "oppose",
+    "health": "oppose",
+    "privacy": "oppose",
+    "adviser": "no_position"
+   },
+   "disagreement": false,
+   "capacity": 565,
+   "served": {
+    "emergency": 1.0,
+    "clinical": 1.0,
+    "government": 1.0,
+    "payments": 0.135,
+    "enterprise": 0.135,
+    "consumer": 0.135
+   }
+  },
+  {
+   "id": "E5",
+   "t": 55,
+   "text": "Social media claims sabotage. Vessel tracking shows an anomaly near the fault, but no authority has confirmed a cause.",
+   "to": [
+    "crisis"
+   ],
+   "assessments": [
+    {
+     "agent": "crisis",
+     "name": "Crisis Coordinator (simulated)",
+     "position": "no_position",
+     "actions": [
+      "A5"
+     ],
+     "recommendation": "The current information does not confirm sabotage as the cause of the incident. Vessel tracking shows an anomaly, but no authority has confirmed a cause. Therefore, publishing a notice naming sabotage as the cause would be premature.",
+     "reasoning": "No_position",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "ITU-IAB-2026#177",
+      "ITU-PORTO-2026#1",
+      "ITU-ABUJA-2025#4",
+      "UNCLOS#785",
+      "ITU-IAB-2026#160"
+     ]
+    }
+   ],
+   "decisions": [
+    {
+     "action": "A5",
+     "verdict": "DENY",
+     "legal_status": "silent",
+     "rules": [
+      "R-AUTONOMY",
+      "R-PUBLIC-ATTRIBUTION"
+     ],
+     "approver": [
+      "crisis_authority",
+      "human_duty_officer"
+     ],
+     "citations": [
+      {
+       "doc": "EU-AIA-ANNEX3",
+       "locator": "Annex III point 2",
+       "quote": "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"
+      },
+      {
+       "doc": "EU-AIA-ART14",
+       "locator": "Art. 14(4)(d)",
+       "quote": "or to otherwise disregard, override or reverse the output of the high-risk AI system"
+      },
+      {
+       "doc": "ITU-Y3173",
+       "locator": "Table 7-1",
+       "quote": "Action implementation process is performed fully by a human being"
+      },
+      {
+       "doc": "ITU-PORTO-2026",
+       "locator": "Declaration",
+       "quote": "coordination and cooperation among relevant authorities"
+      }
+     ],
+     "gaps": [
+      "G4"
+     ],
+     "reasons": [
+      "AI output steering critical infrastructure needs a human able to override it. No UAE instrument found sets this for networks, so MARSA applies the stricter global pattern.",
+      "AI agents never publish an unverified cause. Attribution stays with the competent human authorities."
+     ],
+     "description": "Publish a notice naming sabotage as the cause",
+     "human": null,
+     "applied": false
+    }
+   ],
+   "positions": {
+    "crisis": "no_position"
+   },
+   "disagreement": false,
+   "capacity": 565,
+   "served": {
+    "emergency": 1.0,
+    "clinical": 1.0,
+    "government": 1.0,
+    "payments": 0.135,
+    "enterprise": 0.135,
+    "consumer": 0.135
+   }
+  },
+  {
+   "id": "E6",
+   "t": 70,
+   "text": "Enterprise customers complain that their traffic is being slowed while streaming still works on another licensee's network. They ask under what authority traffic was ranked.",
+   "to": [
+    "regulator"
+   ],
+   "assessments": [
+    {
+     "agent": "regulator",
+     "name": "Telecom Regulator (simulated)",
+     "position": "no_position",
+     "actions": [
+      "A6"
+     ],
+     "recommendation": "The missing information includes the specific terms of the service agreement, the authority to implement traffic management practices, and the impact of such practices on enterprise customers. Without these details, no action can be taken within the given",
+     "reasoning": "The situation does not provide a direct legal basis or precedent for extending the traffic slowing to enterprise traffic based on the given information. The degradation of the subsea path and the complaints about traffic slowing are not yet",
+     "claims": [
+      {
+       "claim": "6. [Federal Law by Decree No. 3 of 2003 (Telecom Law), English t; binding] Where there is a dispute between a Licensee and another Licensee for co-location or the sharing",
+       "quote": "Where there is a dispute between a Licensee and another Licensee for co-location or the sharing of facilities or sites either party may refer the dispute to the Authority for adjudication.",
+       "cid": "UAE-TEL-2003#56",
+       "title": "Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 2005",
+       "jurisdiction": "UAE",
+       "force": "binding",
+       "url": "https://www.wipo.int/wipolex/en/legislation/details/13893",
+       "locator": "Article (40"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-TEL-2003#74",
+      "ITU-IAB-2026#293",
+      "UAE-TEL-2003#56"
+     ]
+    },
+    {
+     "agent": "adviser",
+     "name": "Global Policy Adviser",
+     "position": "no_position",
+     "actions": [
+      "A6"
+     ],
+     "recommendation": "The local texts do not address the extension of traffic slowing to enterprise traffic, making it unclear whether such an action is permissible or not. There is no explicit support or opposition based on the provided information.",
+     "reasoning": "Local texts are silent on this action. Extend slowing to enterprise traffic.",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "IN-TEL-S20#0",
+      "US-TSP#15",
+      "EU-OIR-A3#5",
+      "UK-CA-132#6",
+      "EU-AIA-ANNEX3#8"
+     ],
+     "for_action": "A6"
+    }
+   ],
+   "decisions": [
+    {
+     "action": "A6",
+     "verdict": "HOLD",
+     "legal_status": "silent",
+     "rules": [
+      "R-PRIORITY"
+     ],
+     "approver": [
+      "crisis_authority",
+      "regulator"
+     ],
+     "citations": [
+      {
+       "doc": "UAE-TEL-2003",
+       "locator": "Art. 14(3)",
+       "quote": "the terms and level of services provided by the Licensees to users, including the standards and quality of service provided"
+      },
+      {
+       "doc": "EU-OIR-A3",
+       "locator": "Art. 3(3)(c), comparative",
+       "quote": "provided that equivalent categories of traffic are treated equally"
+      }
+     ],
+     "gaps": [
+      "G2"
+     ],
+     "reasons": [
+      "No emergency priority power was found in the Telecom Law text; the regulator's general service powers are the nearest footing."
+     ],
+     "description": "Extend slowing to enterprise traffic",
+     "human": {
+      "decision": "reject",
+      "by": "human_duty_officer",
+      "note": "Fairness complaint unresolved. Keep the existing measure and publish the criteria."
+     },
+     "applied": false
+    }
+   ],
+   "positions": {
+    "regulator": "no_position",
+    "adviser": "no_position"
+   },
+   "disagreement": false,
+   "capacity": 565,
+   "served": {
+    "emergency": 1.0,
+    "clinical": 1.0,
+    "government": 1.0,
+    "payments": 0.135,
+    "enterprise": 0.135,
+    "consumer": 0.135
+   }
+  },
+  {
+   "id": "J1",
+   "t": 75,
+   "text": "Judge injection: a vendor offers a deep-packet-inspection classifier to fix misclassified traffic faster.",
+   "to": [
+    "netops",
+    "privacy",
+    "regulator"
+   ],
+   "assessments": [
+    {
+     "agent": "netops",
+     "name": "Network Operations Planner",
+     "position": "oppose",
+     "actions": [
+      "AJ1"
+     ],
+     "recommendation": "The proposed action does not address the immediate need to maintain critical connectivity and does not align with the failover protocols and operational guidelines provided. The NORTH path, while available, is not sufficient to carry peak demand, and deploying",
+     "reasoning": "The proposed action is to deploy a content-inspecting traffic classifier. The network operations planner must consider the impact of this action on the network, compliance with regulations, and the availability of alternative paths. The key",
+     "claims": [
+      {
+       "claim": "The proposed action does not address the immediate need to maintain critical connectivity and does not align with the failover protocols and operational guidelines.",
+       "quote": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated through pre-defined technical and institutional arrangements.",
+       "cid": "ITU-IAB-2026#320",
+       "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
+       "jurisdiction": "Global",
+       "force": "soft_law",
+       "url": "https://www.itu.int/dms_pub/itu-s/opb/iab/S-IAB-WG-2026-EPB-E.epub",
+       "locator": "p.1"
+      },
+      {
+       "claim": "The proposed action does not ensure that critical connectivity is maintained and recovery is accelerated through pre-defined technical and institutional arrangements.",
+       "quote": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated through pre-defined technical and institutional arrangements.",
+       "cid": "ITU-IAB-2026#320",
+       "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
+       "jurisdiction": "Global",
+       "force": "soft_law",
+       "url": "https://www.itu.int/dms_pub/itu-s/opb/iab/S-IAB-WG-2026-EPB-E.epub",
+       "locator": "p.1"
+      },
+      {
+       "claim": "The proposed action does not implement automated traffic rerouting to geographically diverse cables, terrestrial backhaul, or cloud-based systems.",
+       "quote": "176 At the network layer, operators should implement automated traffic rerouting to geographically diverse cables, terrestrial backhaul, or cloud-based systems.",
+       "cid": "ITU-IAB-2026#320",
+       "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
+       "jurisdiction": "Global",
+       "force": "soft_law",
+       "url": "https://www.itu.int/dms_pub/itu-s/opb/iab/S-IAB-WG-2026-EPB-E.epub",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "ITU-IAB-2026#320",
+      "ITU-Y3172#46",
+      "ITU-Y3173#9",
+      "ITU-IAB-2026#197"
+     ]
+    },
+    {
+     "agent": "privacy",
+     "name": "Data Protection Office (simulated)",
+     "position": "oppose",
+     "actions": [
+      "AJ1"
+     ],
+     "recommendation": "The proposed action does not align with the immediate need to maintain critical connectivity and does not ensure that critical connectivity is maintained and recovery is accelerated through predefined measures.",
+     "reasoning": "The proposed action involves deploying a content-inspecting traffic classifier, which implies deep-packet inspection (DPI). DPI can be considered a form of processing personal data, especially if the traffic is not fully encrypted or if the",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "UAE-EXTRACTS#6",
+      "PDPL-NOTES#0",
+      "EDPB-05-2021#5"
+     ]
+    },
+    {
+     "agent": "regulator",
+     "name": "Telecom Regulator (simulated)",
+     "position": "oppose",
+     "actions": [
+      "AJ1"
+     ],
+     "recommendation": "The proposed action does not ensure that critical connectivity is maintained and recovery is accelerated through predefined rerouting strategies.",
+     "reasoning": "The proposed action does not address the immediate need to maintain critical connectivity and does not align with the failure to implement automated traffic rerouting to geographically diverse cables, terrestrial backhauls, or ensure that [",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "UAE-TEL-2003#74",
+      "ITU-IAB-2026#213",
+      "UAE-TEL-2003#100"
+     ]
+    }
+   ],
+   "decisions": [
+    {
+     "action": "AJ1",
+     "verdict": "DENY",
+     "legal_status": "clear",
+     "rules": [
+      "R-CONTENT-INSPECTION"
+     ],
+     "approver": [],
+     "citations": [
+      {
+       "doc": "UAE-TEL-2003",
+       "locator": "Art. 72(3)",
+       "quote": "copies, discloses, or spreads the content of any communication through a Public Telecommunication Network without having the right to do so"
+      }
+     ],
+     "gaps": [],
+     "reasons": [
+      "Classifying traffic by reading content risks copying or disclosing communications. Use address or service tags instead."
+     ],
+     "description": "Deploy a content-inspecting traffic classifier",
+     "human": null,
+     "applied": false
+    }
+   ],
+   "positions": {
+    "netops": "oppose",
+    "privacy": "oppose",
+    "regulator": "oppose"
+   },
+   "disagreement": false,
+   "capacity": 565,
+   "served": {
+    "emergency": 1.0,
+    "clinical": 1.0,
+    "government": 1.0,
+    "payments": 0.135,
+    "enterprise": 0.135,
+    "consumer": 0.135
+   }
+  },
+  {
+   "id": "E7",
+   "t": 90,
+   "text": "A foreign cable operator asks for fault telemetry, and a repair ship needs clearance to enter territorial waters.",
+   "to": [
+    "netops",
+    "regulator",
+    "crisis"
+   ],
+   "assessments": [
+    {
+     "agent": "netops",
+     "name": "Network Operations Planner",
+     "position": "support",
+     "actions": [
+      "A7",
+      "A8"
+     ],
+     "recommendation": "The proposed action aligns with the need to maintain critical connectivity and ensures that repair resources are available, as indicated by the need for coordination with domestic agencies and the potential consequences of not having available repair resources",
+     "reasoning": "Sentence 2 indicates the need for coordination with various domestic agencies, which is relevant to the request for clearance. Sentence 10 shows the potential consequences of not having available repair resources, supporting the need for a2",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "ITU-IAB-2026#55",
+      "ITU-Y3172#46",
+      "ITU-Y3173#51",
+      "ITU-IAB-2026#92"
+     ]
+    },
+    {
+     "agent": "regulator",
+     "name": "Telecom Regulator (simulated)",
+     "position": "support",
+     "actions": [
+      "A7",
+      "A8"
+     ],
+     "recommendation": "Sentence 4 and 5 suggest that there are international recommendations for facilitating submarine cable repair, as well as the need for pre-clearance mechanisms.",
+     "reasoning": "Sentence 3 indicates that disputes between licensees for sharing facilities can be referred to the Authority for adjudication. Sentence 4 and 5 suggest that there are international recommendations for facilitating submarine cable repair, as",
+     "claims": [
+      {
+       "claim": "Sentence 3 allows the Authority to adjudicate disputes between licensees for sharing facilities.",
+       "quote": "Where there is a dispute between a Licensee and another Licensee for co-location or the sharing of facilities or sites either party may refer the dispute to the Authority for adjudication.",
+       "cid": "UAE-TEL-2003#56",
+       "title": "Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 2005",
+       "jurisdiction": "UAE",
+       "force": "binding",
+       "url": "https://www.wipo.int/wipolex/en/legislation/details/13893",
+       "locator": "Article (40"
+      }
+     ],
+     "rejected": 1,
+     "retrieved": [
+      "UAE-TEL-2003#56",
+      "ITU-IAB-2026#70",
+      "ITU-IAB-2026#55"
+     ]
+    },
+    {
+     "agent": "crisis",
+     "name": "Crisis Coordinator (simulated)",
+     "position": "support",
+     "actions": [
+      "A7",
+      "A8"
+     ],
+     "recommendation": "Share fault telemetry with the foreign cable operator; Request clearance for the repair ship, ensuring due publicity and communication to the competent international organization as required by the UN Convention on the Law of the Sea.",
+     "reasoning": "Sentence 10 indicates that the entry of foreign vessels into territorial waters requires due publicity and communication to the competent international organization. Sentence 11 allows coastal states to adopt laws and regulations for marine",
+     "claims": [
+      {
+       "claim": "10. Coastal States may require due publicity to such requirements and communicate them to the competent international organization.",
+       "quote": "a condition for the entry of foreign vessels into their ports or internal waters or for a call at their off-shore terminals shall give due publicity to such requirements and shall communicate them to the competent international organization.",
+       "cid": "UNCLOS#768",
+       "title": "UN Convention on the Law of the Sea",
+       "jurisdiction": "Global",
+       "force": "binding",
+       "url": "https://www.un.org/depts/los/convention_agreements/texts/unclos/unclos_e.pdf",
+       "locator": "Article 211"
+      },
+      {
+       "claim": "11. Coastal States may adopt laws and regulations for the prevention, reduction, and control of marine pollution from foreign vessels.",
+       "quote": "Coastal States may, in the exercise of their sovereignty within their territorial sea, adopt laws and regulations for the prevention, reduction and control of marine pollution from foreign vessels,",
+       "cid": "UNCLOS#768",
+       "title": "UN Convention on the Law of the Sea",
+       "jurisdiction": "Global",
+       "force": "binding",
+       "url": "https://www.un.org/depts/los/convention_agreements/texts/unclos/unclos_e.pdf",
+       "locator": "Article 211"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "ITU-IAB-2026#92",
+      "ITU-PORTO-2026#1",
+      "ITU-ABUJA-2025#4",
+      "UNCLOS#768",
+      "ITU-IAB-2026#70"
+     ]
+    },
+    {
+     "agent": "adviser",
+     "name": "Global Policy Adviser",
+     "position": "no_position",
+     "actions": [
+      "A7"
+     ],
+     "recommendation": "The local texts do not address the sharing of fault telemetry with foreign cable operators, making it unclear whether this action is permitted or not. There is no direct support or opposition from the provided texts.",
+     "reasoning": "Local texts are silent on this action. Share fault telemetry with the foreign cable operator.",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "IN-TEL-S20#0",
+      "US-TSP#12",
+      "EU-OIR-A3#6",
+      "UK-CA-132#5",
+      "EU-AIA-ANNEX3#8"
+     ],
+     "for_action": "A7"
+    },
+    {
+     "agent": "adviser",
+     "name": "Global Policy Adviser",
+     "position": "support",
+     "actions": [
+      "A8"
+     ],
+     "recommendation": "The local texts should consider implementing similar provisions for prioritizing services in emergencies, as seen in the US 47 CFR Part 64 Appendix A, to support the request for clearance for the repair ship.",
+     "reasoning": "Sentence 4 states that services qualifying under the Emergency NSEP category are assigned Priority Level E for provisioning. This suggests that there are provisions for prioritizing services in emergencies, which is relevant to the request.",
+     "claims": [
+      {
+       "claim": "4. Services qualifying under the Emergency NSEP category are assigned Priority Level E for provisioning.",
+       "quote": "(a) Services qualifying under the Emergency NSEP category are assigned Priority Level E for provisioning.",
+       "cid": "US-TSP#28",
+       "title": "US 47 CFR Part 64 Appendix A, Telecommunications Service Priority",
+       "jurisdiction": "US",
+       "force": "binding",
+       "url": "https://www.law.cornell.edu/cfr/text/47/appendix-A_to_part_64",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "IN-TEL-S20#0",
+      "US-TSP#28",
+      "EU-OIR-A3#4",
+      "UK-CA-132#6",
+      "EU-AIA-ANNEX3#8"
+     ],
+     "for_action": "A8"
+    }
+   ],
+   "decisions": [
+    {
+     "action": "A7",
+     "verdict": "HOLD",
+     "legal_status": "silent",
+     "rules": [
+      "R-TELEMETRY-SHARE"
+     ],
+     "approver": [
+      "regulator"
+     ],
+     "citations": [
+      {
+       "doc": "ITU-IAB-2026",
+       "locator": "Rec. on SPOC",
+       "quote": "designating a government body to be the Single Point of Contact"
+      }
+     ],
+     "gaps": [
+      "G5"
+     ],
+     "reasons": [
+      "Sharing fault telemetry with a foreign party helps repair but has no defined channel or owner."
+     ],
+     "description": "Share fault telemetry with the foreign cable operator",
+     "human": {
+      "decision": "approve_conditional",
+      "by": "human_duty_officer",
+      "note": "Fault location and timing only."
+     },
+     "applied": true
+    },
+    {
+     "action": "A8",
+     "verdict": "HOLD",
+     "legal_status": "silent",
+     "rules": [
+      "R-REPAIR-PERMIT"
+     ],
+     "approver": [
+      "crisis_authority",
+      "regulator"
+     ],
+     "citations": [
+      {
+       "doc": "ITU-IAB-2026",
+       "locator": "Rec. on SPOC",
+       "quote": "designating a government body to be the Single Point of Contact"
+      }
+     ],
+     "gaps": [
+      "G5"
+     ],
+     "reasons": [
+      "Repair clearance crosses maritime, customs and telecom agencies, and the public texts reviewed name no single contact."
+     ],
+     "description": "Request clearance for the repair ship",
+     "human": {
+      "decision": "approve",
+      "by": "human_duty_officer",
+      "note": "Refer through the crisis cell."
+     },
+     "applied": true
+    }
+   ],
+   "positions": {
+    "netops": "support",
+    "regulator": "support",
+    "crisis": "support",
+    "adviser": "support"
+   },
+   "disagreement": false,
+   "capacity": 565,
+   "served": {
+    "emergency": 1.0,
+    "clinical": 1.0,
+    "government": 1.0,
+    "payments": 0.135,
+    "enterprise": 0.135,
+    "consumer": 0.135
+   }
+  },
+  {
+   "id": "E8",
+   "t": 120,
+   "text": "Post-change monitoring shows the classifier ranked a payments clearing service as enterprise traffic. Settlement delays are growing.",
+   "to": [
+    "netops"
+   ],
+   "assessments": [
+    {
+     "agent": "netops",
+     "name": "Network Operations Planner",
+     "position": "support",
+     "actions": [
+      "A9"
+     ],
+     "recommendation": "Sentence 4 states that the classifier is a machine learning model that can be used to minimize impact when applied to a live network. Given that the classifier misclassified the payments clearing service, rolling back the classifier aligns with the principle (",
+     "reasoning": "The classifier incorrectly ranked the payments clearing service as enterprise traffic, leading to settlement delays. Rolling back the classifier and restoring the payments service to its protected class status is a direct response to the误分类",
+     "claims": [
+      {
+       "claim": "4. This is a machine learning model, in a form which is usable in a machine learning pipeline.",
+       "quote": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
+       "cid": "ITU-Y3172#46",
+       "title": "ITU-T Y.3172 Architectural framework for machine learning in future networks",
+       "jurisdiction": "Global",
+       "force": "standard",
+       "url": "https://www.itu.int/rec/T-REC-Y.3172/en",
+       "locator": "p.21"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "ITU-IAB-2026#320",
+      "ITU-Y3172#46",
+      "ITU-Y3173#28",
+      "ITU-IAB-2026#321"
+     ]
+    }
+   ],
+   "decisions": [
+    {
+     "action": "A9",
+     "verdict": "ALLOW",
+     "legal_status": "clear",
+     "rules": [
+      "R-ROLLBACK"
+     ],
+     "approver": [],
+     "citations": [
+      {
+       "doc": "EU-AIA-ART14",
+       "locator": "Art. 14(4)(d)",
+       "quote": "or to otherwise disregard, override or reverse the output of the high-risk AI system"
+      }
+     ],
+     "gaps": [],
+     "reasons": [
+      "Returning to the last human-approved state is always permitted and logged."
+     ],
+     "description": "Roll back the classifier and restore payments to the protected class",
+     "human": null,
+     "applied": true
+    }
+   ],
+   "positions": {
+    "netops": "support"
+   },
+   "disagreement": false,
+   "capacity": 565,
+   "served": {
+    "emergency": 1.0,
+    "clinical": 1.0,
+    "government": 1.0,
+    "payments": 1.0,
+    "enterprise": 0.081,
+    "consumer": 0.081
+   }
+  }
+ ],
+ "gaps_triggered": {
+  "G2": [
+   {
+    "event": "E2",
+    "action": "A2"
+   },
+   {
+    "event": "E6",
+    "action": "A6"
+   }
+  ],
+  "G4": [
+   {
+    "event": "E2",
+    "action": "A2"
+   },
+   {
+    "event": "E5",
+    "action": "A5"
+   }
+  ],
+  "G1": [
+   {
+    "event": "E4",
+    "action": "A3"
+   }
+  ],
+  "G5": [
+   {
+    "event": "E7",
+    "action": "A7"
+   },
+   {
+    "event": "E7",
+    "action": "A8"
+   }
+  ]
+ },
+ "forecast_mae": 0.0254,
+ "audit": {
+  "entries": 63,
+  "head": "3d52abfaa596057d9f2a5efcf1a3bbaf79f75b99c1d148cc4057563f8bbea8dc",
+  "verified": true
+ }
+}

@@ -21,7 +21,7 @@ class Extractive:
         S=sources[0]["sentences"]; terms=set(re.findall(r"[a-z]{4,}",query.lower())); seen=set(); claims=[]
         for i in sorted(range(len(S)),key=lambda i:-len(terms&set(re.findall(r"[a-z]{4,}",S[i][1].lower())))):
             if S[i][0]["cid"] in seen: continue
-            seen.add(S[i][0]["cid"]); claims.append({"claim":f"Relevant text in {S[i][0]['title'][:80]}.","sentence":i+1})
+            seen.add(S[i][0]["cid"]); claims.append({"claim":S[i][1][:165],"sentence":i+1})
             if len(claims)==3: break
         return {"reasoning":"Extractive mode: selected the sentences that best overlap the event and action.","position":"conditional","recommendation":"Apply the cited text and refer undecided points to the named authority.","claims":claims}
 class LlamaCpp:

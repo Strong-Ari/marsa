@@ -9,7 +9,7 @@ Policy-gated multi-agent crisis response for telecom networks
 [![ITU AI for Good Lab Hackathon UAE](https://img.shields.io/badge/ITU-AI%20for%20Good%20Lab%20Hackathon%20UAE-0d5c6e)](https://aiforgood.itu.int/event/ai-for-good-sandbox-hackathon-united-arab-emirates/)
 [![ITU-T Y.3172](https://img.shields.io/badge/aligned%20with-ITU--T%20Y.3172-176b45)](https://www.itu.int/rec/T-REC-Y.3172/en)
 [![Citations](https://img.shields.io/badge/legal%20citations%20verified-34%2F34-176b45)](#results)
-[![Tests](https://img.shields.io/badge/tests-11%20passing-176b45)](tests/test_core.py)
+[![Tests](https://img.shields.io/badge/tests-12%20passing-176b45)](tests/test_core.py)
 [![Runs offline](https://img.shields.io/badge/runs-offline-8a5a00)](#quick-start)
 [![License: MIT](https://img.shields.io/badge/license-MIT-102c35)](LICENSE)
 
@@ -51,7 +51,7 @@ flowchart LR
 |---|---|---|
 | **Knowledge base** | Hybrid dense and BM25 retrieval over 87 documents, with legal force, jurisdiction and page or article locators | Binding law, soft law and commentary are never confused |
 | **Agents** | Simulated operator, regulator, health, data-protection, crisis and global-policy roles, each with its own inbox | Information is incomplete and arrives at different times |
-| **Evidence gate** | A claim survives only with a verbatim sentence from a source the agent retrieved, and may not assert an unconfirmed cause | Invented law is removed before anyone sees it |
+| **Evidence gate** | A claim survives only with a verbatim sentence from a source the agent retrieved, must reuse the terms of that sentence, and may not assert an unconfirmed cause | Invented law is removed before anyone sees it |
 | **Policy gateway** | Rules return `ALLOW`, `HOLD` or `DENY` with the provision and approver. Unknown actions fail safe to `HOLD` | Model output can never reach the network directly |
 | **Audit log** | SHA-256 chain of prompts, retrievals, rejections, decisions and approvals | Changing one line breaks every line after it |
 
@@ -136,7 +136,7 @@ Reproduce the evaluation and build the Incident Room page:
 ```bash
 PYTHONPATH=. python eval/run_eval.py
 python -m marsa.absence
-python -m marsa.viewer runs/injected
+python -m marsa.viewer runs/final
 ```
 
 ## Results
@@ -150,6 +150,7 @@ python -m marsa.viewer runs/injected
 | Tampered quotes rejected by the evidence gate | **500 / 500** |
 | Genuine quotes accepted | **500 / 500** |
 | Gateway decisions identical with and without a model | **10 / 10** |
+| Unsupported model claims stopped in the final Qwen2.5-7B run | **12 of 29** |
 
 The retrieval benchmark is small and was also used for tuning.
 

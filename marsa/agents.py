@@ -32,7 +32,7 @@ PRIMARY={
 LOCAL=("UAE","Global","Regional")
 RULES=("Answer using only the numbered sentences. Cite a sentence by its number. Do not claim anything the sentences do not state. "
        "Sentences marked COMPARATIVE show practice elsewhere and do not bind this case. Never state a cause of the incident. "
-       "If the sentences do not settle the question, choose no_position and say what is missing. Be brief. Each claim is one full sentence in your own words saying what the cited sentence means for this case, for example: {\"claim\": \"The statute restricts transfer of health data outside the State.\", \"sentence\": 3}.")
+       "If the sentences do not settle the question, choose no_position and say what is missing. Be brief. Each claim is one full sentence, in terms taken from the cited sentence, saying what that sentence means for this case. Cite only a sentence that states the claim.")
 def sentences(text):
     return [s.strip() for s in re.split(r"(?<=[.;:])\s+(?=[A-Z0-9(“\"])",text) if 30<=len(s.strip())<=320]
 def best(text,q,n):

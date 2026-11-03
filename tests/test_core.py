@@ -30,5 +30,10 @@ def test_evidence_gate():
 
 def test_unconfirmed_cause_rejected_even_with_real_quote():
     got={"D#1":{"text":"Effective investigation depends on the existence of clear rules for all parties."}}
-    c={"claim":"The anomaly suggests sabotage.","cid":"D#1","quote":"Effective investigation depends on the existence"}
+    c={"claim":"Effective investigation of clear rules suggests sabotage here.","cid":"D#1","quote":"Effective investigation depends on the existence"}
     ok,bad=evidence.gate([c],got); assert not ok and bad[0]["gate"]=="unconfirmed_cause"
+
+def test_claim_pinned_on_unrelated_quote_rejected():
+    got={"D#1":{"text":"Repair ships need clearance from coastal authorities before entering waters."}}
+    c={"claim":"Hospitals may send patient records abroad in a crisis.","cid":"D#1","quote":"Repair ships need clearance from coastal authorities"}
+    assert evidence.gate([c],got)[1][0]["gate"]=="claim_not_supported_by_quote"

@@ -23,7 +23,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in ITU-T Y.3172 Architectural framework for machine learning in future networks.",
+       "claim": "NOTE – The nodes of a machine learning pipeline are entities that are managed in a standard manner and can be hosted in a variety of network functions [b-ITU-T Y.310",
        "quote": "NOTE – The nodes of a machine learning pipeline are entities that are managed in a standard manner and can be hosted in a variety of network functions [b-ITU-T Y.3100].",
        "cid": "ITU-Y3172#10",
        "title": "ITU-T Y.3172 Architectural framework for machine learning in future networks",
@@ -33,7 +33,7 @@
        "locator": "p.8"
       },
       {
-       "claim": "Relevant text in ITU-T Y.3173 Framework for evaluating intelligence levels of future networks.",
+       "claim": "ML sandbox subsystem, are used for monitoring and evaluating network intelligence levels in the ML pipeline subsystem and the ML sandbox subsystem.",
        "quote": "ML sandbox subsystem, are used for monitoring and evaluating network intelligence levels in the ML pipeline subsystem and the ML sandbox subsystem.",
        "cid": "ITU-Y3173#28",
        "title": "ITU-T Y.3173 Framework for evaluating intelligence levels of future networks",
@@ -43,7 +43,7 @@
        "locator": "p.15"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated throu",
        "quote": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated through pre-defined technical and institutional arrangements.",
        "cid": "ITU-IAB-2026#320",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -96,7 +96,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in ITU-T Y.3172 Architectural framework for machine learning in future networks.",
+       "claim": "NOTE – The nodes of a machine learning pipeline are entities that are managed in a standard manner and can be hosted in a variety of network functions [b-ITU-T Y.310",
        "quote": "NOTE – The nodes of a machine learning pipeline are entities that are managed in a standard manner and can be hosted in a variety of network functions [b-ITU-T Y.3100].",
        "cid": "ITU-Y3172#10",
        "title": "ITU-T Y.3172 Architectural framework for machine learning in future networks",
@@ -106,7 +106,7 @@
        "locator": "p.8"
       },
       {
-       "claim": "Relevant text in ITU-T Y.3173 Framework for evaluating intelligence levels of future networks.",
+       "claim": "ITU-T Y.3173 (02/2020) 9 Figure 8-1 – Architectural framework for evaluating intelligence levels in the network Although not shown in Figure 8-1, ML pipeline nodes i",
        "quote": "ITU-T Y.3173 (02/2020) 9 Figure 8-1 – Architectural framework for evaluating intelligence levels in the network Although not shown in Figure 8-1, ML pipeline nodes in the ML pipeline subsystem [ITU-T Y.3172] provide support for evaluating network intelligence levels according to the dimensions described in clause 7.1.",
        "cid": "ITU-Y3173#27",
        "title": "ITU-T Y.3173 Framework for evaluating intelligence levels of future networks",
@@ -116,7 +116,7 @@
        "locator": "p.15"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated throu",
        "quote": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated through pre-defined technical and institutional arrangements.",
        "cid": "ITU-IAB-2026#320",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -146,7 +146,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "80 In this, multi-route, decentralized submarine cable routes and landing station designs are described as a good strategy for maintaining digital communication serv",
        "quote": "80 In this, multi-route, decentralized submarine cable routes and landing station designs are described as a good strategy for maintaining digital communication services during large-scale disasters. • Rapid repair and seismic factor tracking Japan has established professional repair teams that are",
        "cid": "ITU-IAB-2026#218",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -156,7 +156,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "The areas with the most significant sea-level rise are the central and south Pacific islands, the Philippines, Indonesia, Japan, the western Caribbean, the Gulf of M",
        "quote": "The areas with the most significant sea-level rise are the central and south Pacific islands, the Philippines, Indonesia, Japan, the western Caribbean, the Gulf of Mexico, and north-west Australia.",
        "cid": "ITU-IAB-2026#303",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -166,7 +166,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 200.",
+       "claim": "Article (14) Considering Articles (3) and (12) of this Federal Law by Decree the Authority shall have the power to issue regulations, orders, resolutions and procedu",
        "quote": "Article (14) Considering Articles (3) and (12) of this Federal Law by Decree the Authority shall have the power to issue regulations, orders, resolutions and procedures in relation to:",
        "cid": "UAE-TEL-2003#24",
        "title": "Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 2005",
@@ -194,7 +194,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in US 47 CFR Part 64 Appendix A, Telecommunications Service Priority.",
+       "claim": "The NSEP TSP System authorizes priority treatment to certain telecommunications services and internet Protocol-based services, including voice, data, and video servi",
        "quote": "The NSEP TSP System authorizes priority treatment to certain telecommunications services and internet Protocol-based services, including voice, data, and video services, for which provisioning or restoration priority levels are requested, assigned, and approved in accordance with this appendix. b.",
        "cid": "US-TSP#0",
        "title": "US 47 CFR Part 64 Appendix A, Telecommunications Service Priority",
@@ -204,7 +204,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in EU AI Act Annex III, high-risk AI systems.",
+       "claim": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emerge",
        "quote": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emergency first response services, including by police, firefighters and medical aid, as well as of emergency healthcare patient triage systems.",
        "cid": "EU-AIA-ANNEX3#8",
        "title": "EU AI Act Annex III, high-risk AI systems",
@@ -214,7 +214,7 @@
        "locator": "Article 3"
       },
       {
-       "claim": "Relevant text in UK Communications Act 2003 s.132, powers in emergencies.",
+       "claim": "Changes to Legislation Revised legislation carried on this site may not be fully",
        "quote": "Changes to Legislation Revised legislation carried on this site may not be fully",
        "cid": "UK-CA-132#0",
        "title": "UK Communications Act 2003 s.132, powers in emergencies",
@@ -349,7 +349,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in UAE health-data and personal-data statutes, curated verbatim extracts.",
+       "claim": "The health information and data related to the health services provided in the State may not be stored, processed,",
        "quote": "The health information and data related to the health services provided in the State may not be stored, processed,",
        "cid": "UAE-EXTRACTS#2",
        "title": "UAE health-data and personal-data statutes, curated verbatim extracts",
@@ -359,7 +359,7 @@
        "locator": "Article 13"
       },
       {
-       "claim": "Relevant text in Team notes on UAE health-data transfer exceptions (MD 51/2021).",
+       "claim": "# Notes on health-data transfer exceptions Our own summary of law-firm commentary (CMS, Al Tamimi, Trowers & Hamlins), with sources in the manifest.",
        "quote": "# Notes on health-data transfer exceptions Our own summary of law-firm commentary (CMS, Al Tamimi, Trowers & Hamlins), with sources in the manifest.",
        "cid": "HEALTH-NOTES#0",
        "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
@@ -411,7 +411,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated throu",
        "quote": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated through pre-defined technical and institutional arrangements.",
        "cid": "ITU-IAB-2026#320",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -421,7 +421,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in ITU-T Y.3172 Architectural framework for machine learning in future networks.",
+       "claim": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
        "quote": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
        "cid": "ITU-Y3172#46",
        "title": "ITU-T Y.3172 Architectural framework for machine learning in future networks",
@@ -431,7 +431,7 @@
        "locator": "p.21"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "Adopting technologies that enhance network and operational intelligence is essential.",
        "quote": "Adopting technologies that enhance network and operational intelligence is essential.",
        "cid": "ITU-IAB-2026#216",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -461,7 +461,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in UAE health-data and personal-data statutes, curated verbatim extracts.",
+       "claim": "The health information and data related to the health services provided in the State may not be stored, processed,",
        "quote": "The health information and data related to the health services provided in the State may not be stored, processed,",
        "cid": "UAE-EXTRACTS#2",
        "title": "UAE health-data and personal-data statutes, curated verbatim extracts",
@@ -471,7 +471,7 @@
        "locator": "Article 13"
       },
       {
-       "claim": "Relevant text in Team notes on UAE health-data transfer exceptions (MD 51/2021).",
+       "claim": "# Notes on health-data transfer exceptions Our own summary of law-firm commentary (CMS, Al Tamimi, Trowers & Hamlins), with sources in the manifest.",
        "quote": "# Notes on health-data transfer exceptions Our own summary of law-firm commentary (CMS, Al Tamimi, Trowers & Hamlins), with sources in the manifest.",
        "cid": "HEALTH-NOTES#0",
        "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
@@ -499,7 +499,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in UAE health-data and personal-data statutes, curated verbatim extracts.",
+       "claim": "Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State.",
        "quote": "Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State.",
        "cid": "UAE-EXTRACTS#6",
        "title": "UAE health-data and personal-data statutes, curated verbatim extracts",
@@ -509,7 +509,7 @@
        "locator": "Article 1"
       },
       {
-       "claim": "Relevant text in EDPB Guidelines 05/2021 on Article 3 and Chapter V GDPR.",
+       "claim": "Indeed, although a certain data transmission may not qualify as a transfer according to Chapter V, such processing can still be associated with increased risks since",
        "quote": "Indeed, although a certain data transmission may not qualify as a transfer according to Chapter V, such processing can still be associated with increased risks since it takes place outside the EU, for example due to conflicting national laws or disproportionate government access in the third country.",
        "cid": "EDPB-05-2021#3",
        "title": "EDPB Guidelines 05/2021 on Article 3 and Chapter V GDPR",
@@ -519,7 +519,7 @@
        "locator": "p.3"
       },
       {
-       "claim": "Relevant text in Team notes on the UAE Personal Data Protection Law.",
+       "claim": "The Article 23 text extracted here does not say who decides that a crisis transfer serves the public interest.",
        "quote": "The Article 23 text extracted here does not say who decides that a crisis transfer serves the public interest.",
        "cid": "PDPL-NOTES#0",
        "title": "Team notes on the UAE Personal Data Protection Law",
@@ -547,7 +547,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in US 47 CFR Part 64 Appendix A, Telecommunications Service Priority.",
+       "claim": "(1) Review and decide whether to sponsor foreign, state, and local government and private industry (including service providers) requests for priority actions.",
        "quote": "(1) Review and decide whether to sponsor foreign, state, and local government and private industry (including service providers) requests for priority actions.",
        "cid": "US-TSP#12",
        "title": "US 47 CFR Part 64 Appendix A, Telecommunications Service Priority",
@@ -557,7 +557,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in EU AI Act Annex III, high-risk AI systems.",
+       "claim": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emerge",
        "quote": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emergency first response services, including by police, firefighters and medical aid, as well as of emergency healthcare patient triage systems.",
        "cid": "EU-AIA-ANNEX3#8",
        "title": "EU AI Act Annex III, high-risk AI systems",
@@ -567,7 +567,7 @@
        "locator": "Article 3"
       },
       {
-       "claim": "Relevant text in Open Internet Regulation (EU) 2015/2120 Article 3, UK retained text.",
+       "claim": "The first subparagraph shall not prevent providers of internet access services from implementing reasonable traffic management measures.",
        "quote": "The first subparagraph shall not prevent providers of internet access services from implementing reasonable traffic management measures.",
        "cid": "EU-OIR-A3#4",
        "title": "Open Internet Regulation (EU) 2015/2120 Article 3, UK retained text",
@@ -706,7 +706,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in Porto Declaration on Submarine Cable Resilience (Feb 2026).",
+       "claim": "Streamline submarine cable permitting, maintenance, and repair processes through clear, transparent, and predictable regulatory frameworks and designate a single gov",
        "quote": "Streamline submarine cable permitting, maintenance, and repair processes through clear, transparent, and predictable regulatory frameworks and designate a single government contact point to facilitate timely cable deployment and repair.",
        "cid": "ITU-PORTO-2026#1",
        "title": "Porto Declaration on Submarine Cable Resilience (Feb 2026)",
@@ -716,7 +716,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "The following countries generally adopt an approach in which the telecommunications authority (usually under its ministry of communications) is responsible for recei",
        "quote": "The following countries generally adopt an approach in which the telecommunications authority (usually under its ministry of communications) is responsible for receiving accident reports – in other words, is the single point of contact.",
        "cid": "ITU-IAB-2026#160",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -726,7 +726,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "These involve undertaking measures that include evidence preservation, vessel identification, and coordination with maritime administrations and prosecutorial author",
        "quote": "These involve undertaking measures that include evidence preservation, vessel identification, and coordination with maritime administrations and prosecutorial authorities.",
        "cid": "ITU-IAB-2026#177",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -826,7 +826,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 200.",
+       "claim": "Article (54) A Licensee licensed to operate a Public Telecommunication Network, may after obtaining the approval of the Supreme Committee in co-ordination with the r",
        "quote": "Article (54) A Licensee licensed to operate a Public Telecommunication Network, may after obtaining the approval of the Supreme Committee in co-ordination with the relevant competent authority, remove or relocate a tree, group of trees or other vegetation if such tree, group of trees or vegetation:",
        "cid": "UAE-TEL-2003#74",
        "title": "Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 2005",
@@ -836,7 +836,7 @@
        "locator": "Article (54"
       },
       {
-       "claim": "Relevant text in Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 200.",
+       "claim": "Where there is a dispute between a Licensee and another Licensee for co-location or the sharing of facilities or sites either party may refer the dispute to the Auth",
        "quote": "Where there is a dispute between a Licensee and another Licensee for co-location or the sharing of facilities or sites either party may refer the dispute to the Authority for adjudication.",
        "cid": "UAE-TEL-2003#56",
        "title": "Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 2005",
@@ -846,7 +846,7 @@
        "locator": "Article (40"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "148 Furthermore, open fibre standards, such as interoperable repeater modules, standardized line-termination equipment interfaces, and vendor-neutral network managem",
        "quote": "148 Furthermore, open fibre standards, such as interoperable repeater modules, standardized line-termination equipment interfaces, and vendor-neutral network management protocols, reduce capital costs for competing operators.",
        "cid": "ITU-IAB-2026#293",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -874,7 +874,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in US 47 CFR Part 64 Appendix A, Telecommunications Service Priority.",
+       "claim": "(ii) Providing Emergency NSEP services ( i.e., those assigned provisioning priority level “E”) in order of receipt of the service requests;",
        "quote": "(ii) Providing Emergency NSEP services ( i.e., those assigned provisioning priority level “E”) in order of receipt of the service requests;",
        "cid": "US-TSP#15",
        "title": "US 47 CFR Part 64 Appendix A, Telecommunications Service Priority",
@@ -884,7 +884,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in EU AI Act Annex III, high-risk AI systems.",
+       "claim": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emerge",
        "quote": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emergency first response services, including by police, firefighters and medical aid, as well as of emergency healthcare patient triage systems.",
        "cid": "EU-AIA-ANNEX3#8",
        "title": "EU AI Act Annex III, high-risk AI systems",
@@ -894,7 +894,7 @@
        "locator": "Article 3"
       },
       {
-       "claim": "Relevant text in Open Internet Regulation (EU) 2015/2120 Article 3, UK retained text.",
+       "claim": "(c) prevent impending network congestion and mitigate the effects of exceptional or temporary network congestion, provided that equivalent categories of traffic are ",
        "quote": "(c) prevent impending network congestion and mitigate the effects of exceptional or temporary network congestion, provided that equivalent categories of traffic are treated equally.",
        "cid": "EU-OIR-A3#5",
        "title": "Open Internet Regulation (EU) 2015/2120 Article 3, UK retained text",
@@ -990,7 +990,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in ITU-T Y.3173 Framework for evaluating intelligence levels of future networks.",
+       "claim": "NOTE – The nodes of a machine learning pipeline are entities that are managed in a standard manner and can be hosted in a variety of network functions [b-ITU-T Y.310",
        "quote": "NOTE – The nodes of a machine learning pipeline are entities that are managed in a standard manner and can be hosted in a variety of network functions [b-ITU-T Y.3100].",
        "cid": "ITU-Y3173#9",
        "title": "ITU-T Y.3173 Framework for evaluating intelligence levels of future networks",
@@ -1000,7 +1000,7 @@
        "locator": "p.7"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated throu",
        "quote": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated through pre-defined technical and institutional arrangements.",
        "cid": "ITU-IAB-2026#320",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -1010,7 +1010,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in ITU-T Y.3172 Architectural framework for machine learning in future networks.",
+       "claim": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
        "quote": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
        "cid": "ITU-Y3172#46",
        "title": "ITU-T Y.3172 Architectural framework for machine learning in future networks",
@@ -1039,7 +1039,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in UAE health-data and personal-data statutes, curated verbatim extracts.",
+       "claim": "Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State.",
        "quote": "Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State.",
        "cid": "UAE-EXTRACTS#6",
        "title": "UAE health-data and personal-data statutes, curated verbatim extracts",
@@ -1049,7 +1049,7 @@
        "locator": "Article 1"
       },
       {
-       "claim": "Relevant text in EDPB Guidelines 05/2021 on Article 3 and Chapter V GDPR.",
+       "claim": "5 2 Criteria to qualify a processing operation as a transfer of personal data to a third country or to an international organisation ................................",
        "quote": "5 2 Criteria to qualify a processing operation as a transfer of personal data to a third country or to an international organisation .................................................................................................................",
        "cid": "EDPB-05-2021#5",
        "title": "EDPB Guidelines 05/2021 on Article 3 and Chapter V GDPR",
@@ -1059,7 +1059,7 @@
        "locator": "p.4"
       },
       {
-       "claim": "Relevant text in Team notes on the UAE Personal Data Protection Law.",
+       "claim": "The Article 23 text extracted here does not say who decides that a crisis transfer serves the public interest.",
        "quote": "The Article 23 text extracted here does not say who decides that a crisis transfer serves the public interest.",
        "cid": "PDPL-NOTES#0",
        "title": "Team notes on the UAE Personal Data Protection Law",
@@ -1087,7 +1087,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 200.",
+       "claim": "Article (54) A Licensee licensed to operate a Public Telecommunication Network, may after obtaining the approval of the Supreme Committee in co-ordination with the r",
        "quote": "Article (54) A Licensee licensed to operate a Public Telecommunication Network, may after obtaining the approval of the Supreme Committee in co-ordination with the relevant competent authority, remove or relocate a tree, group of trees or other vegetation if such tree, group of trees or vegetation:",
        "cid": "UAE-TEL-2003#74",
        "title": "Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 2005",
@@ -1097,7 +1097,7 @@
        "locator": "Article (54"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "In 2023, for example, a south-east Asian country was able to reroute traffic through terrestrial connections with a neighbouring country and rely on locally cached c",
        "quote": "In 2023, for example, a south-east Asian country was able to reroute traffic through terrestrial connections with a neighbouring country and rely on locally cached content, despite a submarine cable outage.",
        "cid": "ITU-IAB-2026#213",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -1178,7 +1178,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "an anchor, a net or any other fishing gear, in order to avoid injuring a submarine cable or pipeline, shall be indemnified by the owner of the cable or pipeline, pro",
        "quote": "an anchor, a net or any other fishing gear, in order to avoid injuring a submarine cable or pipeline, shall be indemnified by the owner of the cable or pipeline, provided that the owner of the ship has taken all reasonable precautionary measures beforehand.",
        "cid": "ITU-IAB-2026#55",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -1188,7 +1188,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in ITU-T Y.3172 Architectural framework for machine learning in future networks.",
+       "claim": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
        "quote": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
        "cid": "ITU-Y3172#46",
        "title": "ITU-T Y.3172 Architectural framework for machine learning in future networks",
@@ -1198,7 +1198,7 @@
        "locator": "p.21"
       },
       {
-       "claim": "Relevant text in ITU-T Y.3173 Framework for evaluating intelligence levels of future networks.",
+       "claim": "II.3 Alarm RCA and fault recovery This clause describes the application of the method for evaluating network intelligence level on an alarm root cause analysis (RCA)",
        "quote": "II.3 Alarm RCA and fault recovery This clause describes the application of the method for evaluating network intelligence level on an alarm root cause analysis (RCA) and fault recovery.",
        "cid": "ITU-Y3173#51",
        "title": "ITU-T Y.3173 Framework for evaluating intelligence levels of future networks",
@@ -1228,7 +1228,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 200.",
+       "claim": "The Authority shall make such investigations and request any information it deems necessary to resolve the disputes referred in accordance with this Article.",
        "quote": "The Authority shall make such investigations and request any information it deems necessary to resolve the disputes referred in accordance with this Article.",
        "cid": "UAE-TEL-2003#56",
        "title": "Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 2005",
@@ -1238,7 +1238,7 @@
        "locator": "Article (40"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "Governments, for example, are encouraged to review their cabotage restrictions, or requirements for diplomatic notification, potentially exempting cable repair opera",
        "quote": "Governments, for example, are encouraged to review their cabotage restrictions, or requirements for diplomatic notification, potentially exempting cable repair operators from these obligations.",
        "cid": "ITU-IAB-2026#70",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -1248,7 +1248,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "an anchor, a net or any other fishing gear, in order to avoid injuring a submarine cable or pipeline, shall be indemnified by the owner of the cable or pipeline, pro",
        "quote": "an anchor, a net or any other fishing gear, in order to avoid injuring a submarine cable or pipeline, shall be indemnified by the owner of the cable or pipeline, provided that the owner of the ship has taken all reasonable precautionary measures beforehand.",
        "cid": "ITU-IAB-2026#55",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -1277,7 +1277,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in Porto Declaration on Submarine Cable Resilience (Feb 2026).",
+       "claim": "Streamline submarine cable permitting, maintenance, and repair processes through clear, transparent, and predictable regulatory frameworks and designate a single gov",
        "quote": "Streamline submarine cable permitting, maintenance, and repair processes through clear, transparent, and predictable regulatory frameworks and designate a single government contact point to facilitate timely cable deployment and repair.",
        "cid": "ITU-PORTO-2026#1",
        "title": "Porto Declaration on Submarine Cable Resilience (Feb 2026)",
@@ -1287,7 +1287,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "Submarine Systems Common procedures across maintenance zones Operational harmonization has proved essential in minimizing delays in coordination during multi-operato",
        "quote": "Submarine Systems Common procedures across maintenance zones Operational harmonization has proved essential in minimizing delays in coordination during multi-operator repair scenarios.",
        "cid": "ITU-IAB-2026#92",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -1297,7 +1297,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in Abuja Declaration on Submarine Cable Resilience (Feb 2025).",
+       "claim": "Using Data for Informed Decisions We underline the importance of using data-driven and evidence-based approaches, including the analysis of cable routes, natural haz",
        "quote": "Using Data for Informed Decisions We underline the importance of using data-driven and evidence-based approaches, including the analysis of cable routes, natural hazard risks, maritime activities and resources, to develop repair capabilities, guide decision-making and prioritize areas requiring additional focus.",
        "cid": "ITU-ABUJA-2025#4",
        "title": "Abuja Declaration on Submarine Cable Resilience (Feb 2025)",
@@ -1327,7 +1327,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in US 47 CFR Part 64 Appendix A, Telecommunications Service Priority.",
+       "claim": "(1) Review and decide whether to sponsor foreign, state, and local government and private industry (including service providers) requests for priority actions.",
        "quote": "(1) Review and decide whether to sponsor foreign, state, and local government and private industry (including service providers) requests for priority actions.",
        "cid": "US-TSP#12",
        "title": "US 47 CFR Part 64 Appendix A, Telecommunications Service Priority",
@@ -1337,7 +1337,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in EU AI Act Annex III, high-risk AI systems.",
+       "claim": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emerge",
        "quote": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emergency first response services, including by police, firefighters and medical aid, as well as of emergency healthcare patient triage systems.",
        "cid": "EU-AIA-ANNEX3#8",
        "title": "EU AI Act Annex III, high-risk AI systems",
@@ -1347,7 +1347,7 @@
        "locator": "Article 3"
       },
       {
-       "claim": "Relevant text in Open Internet Regulation (EU) 2015/2120 Article 3, UK retained text.",
+       "claim": "1(1) ( 1 ) Directive 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of pers",
        "quote": "1(1) ( 1 ) Directive 95/46/EC of the European Parliament and of the Council of 24 October 1995 on the protection of individuals with regard to the processing of personal data and on the free movement of such data (",
        "cid": "EU-OIR-A3#6",
        "title": "Open Internet Regulation (EU) 2015/2120 Article 3, UK retained text",
@@ -1378,7 +1378,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in US 47 CFR Part 64 Appendix A, Telecommunications Service Priority.",
+       "claim": "(c) For restoration, Emergency NSEP services may be assigned priority levels under the provisions applicable to Essential NSEP services (see section 10(c)).",
        "quote": "(c) For restoration, Emergency NSEP services may be assigned priority levels under the provisions applicable to Essential NSEP services (see section 10(c)).",
        "cid": "US-TSP#28",
        "title": "US 47 CFR Part 64 Appendix A, Telecommunications Service Priority",
@@ -1388,7 +1388,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in EU AI Act Annex III, high-risk AI systems.",
+       "claim": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emerge",
        "quote": "(d) AI systems intended to evaluate and classify emergency calls by natural persons or to be used to dispatch, or to establish priority in the dispatching of, emergency first response services, including by police, firefighters and medical aid, as well as of emergency healthcare patient triage systems.",
        "cid": "EU-AIA-ANNEX3#8",
        "title": "EU AI Act Annex III, high-risk AI systems",
@@ -1398,7 +1398,7 @@
        "locator": "Article 3"
       },
       {
-       "claim": "Relevant text in India Telecommunications Act 2023 s.20, curated extracts.",
+       "claim": "# India, Telecommunications Act 2023, section 20: short verbatim extracts (retrieved 2026-11-03) Section 20(1):",
        "quote": "# India, Telecommunications Act 2023, section 20: short verbatim extracts (retrieved 2026-11-03) Section 20(1):",
        "cid": "IN-TEL-S20#0",
        "title": "India Telecommunications Act 2023 s.20, curated extracts",
@@ -1520,7 +1520,7 @@
      "reasoning": "Extractive mode: selected the sentences that best overlap the event and action.",
      "claims": [
       {
-       "claim": "Relevant text in ITU-T Y.3173 Framework for evaluating intelligence levels of future networks.",
+       "claim": "ML sandbox subsystem, are used for monitoring and evaluating network intelligence levels in the ML pipeline subsystem and the ML sandbox subsystem.",
        "quote": "ML sandbox subsystem, are used for monitoring and evaluating network intelligence levels in the ML pipeline subsystem and the ML sandbox subsystem.",
        "cid": "ITU-Y3173#28",
        "title": "ITU-T Y.3173 Framework for evaluating intelligence levels of future networks",
@@ -1530,7 +1530,7 @@
        "locator": "p.15"
       },
       {
-       "claim": "Relevant text in International Advisory Body on Submarine Cable Resilience: Report of the Working.",
+       "claim": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated throu",
        "quote": "Failover protocols Failover protocols ensure that when hazards disrupt submarine cable systems, critical connectivity is maintained and recovery is accelerated through pre-defined technical and institutional arrangements.",
        "cid": "ITU-IAB-2026#320",
        "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
@@ -1540,7 +1540,7 @@
        "locator": "p.1"
       },
       {
-       "claim": "Relevant text in ITU-T Y.3172 Architectural framework for machine learning in future networks.",
+       "claim": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
        "quote": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
        "cid": "ITU-Y3172#46",
        "title": "ITU-T Y.3172 Architectural framework for machine learning in future networks",
@@ -1640,7 +1640,7 @@
  "forecast_mae": 0.0254,
  "audit": {
   "entries": 63,
-  "head": "57059275708141deea19715b1921dfa3c6364874e6b1d2848662395a3eba9ec1",
+  "head": "405e8fbea3efb2b2070091c341309c747ea35f2327a27748938ed3997d10f9f9",
   "verified": true
  }
 }
