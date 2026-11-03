@@ -1,0 +1,37 @@
+[
+ {
+  "doc": "UAE-TEL-2003",
+  "counts": {
+   "emergency": 0,
+   "disaster": 0,
+   "crisis": 0,
+   "priority": 0
+  }
+ },
+ {
+  "doc": "ITU-IAB-2026",
+  "counts": {
+   "privacy": 0,
+   "personal data": 0,
+   "data protection": 0,
+   "data localisation": 0,
+   "data localization": 0,
+   "human oversight": 0
+  }
+ },
+ {
+  "doc": "ITU-Y3172",
+  "counts": {
+   "regulat": 0,
+   "legal": 0,
+   "oversight": 0
+  }
+ },
+ {
+  "doc": "ITU-Y3173",
+  "counts": {
+   "regulat": 0,
+   "legal": 0
+  }
+ }
+]

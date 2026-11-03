@@ -1,0 +1,33 @@
+{
+ "n_queries": 32,
+ "retrieval": {
+  "dense+boost1": {
+   "hit@1": 0.656,
+   "hit@5": 0.875,
+   "mrr": 0.735,
+   "arabic_hit@5": "3/4"
+  },
+  "bm25+boost1": {
+   "hit@1": 0.75,
+   "hit@5": 0.844,
+   "mrr": 0.786,
+   "arabic_hit@5": "0/4"
+  },
+  "hybrid+boost1": {
+   "hit@1": 0.844,
+   "hit@5": 0.906,
+   "mrr": 0.875,
+   "arabic_hit@5": "3/4"
+  },
+  "hybrid+boost1.5": {
+   "hit@1": 0.875,
+   "hit@5": 0.938,
+   "mrr": 0.901,
+   "arabic_hit@5": "4/4"
+  }
+ },
+ "evidence_gate": {
+  "genuine_quotes_passed": "500/500",
+  "tampered_quotes_rejected": "500/500"
+ }
+}

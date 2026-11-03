@@ -1,0 +1,33 @@
+# Retrieval benchmark: each query must surface a chunk from one of the expected documents.
+- {q: "Can health data related to services in the State be sent abroad?", doc: [UAE-EXTRACTS, HEALTH-NOTES]}
+- {q: "fine for breaching the rule on moving health information outside the country", doc: [UAE-EXTRACTS]}
+- {q: "definition of cross-border processing of personal data", doc: [UAE-EXTRACTS, PDPL-NOTES]}
+- {q: "transfer of personal data without adequate protection in the public interest", doc: [UAE-EXTRACTS, PDPL-NOTES]}
+- {q: "right to object to automated decisions", doc: [UAE-EXTRACTS, PDPL-NOTES]}
+- {q: "exceptions under Ministerial Decision 51 of 2021 for health data", doc: [HEALTH-NOTES]}
+- {q: "criteria for what counts as an international transfer of personal data", doc: [EDPB-05-2021]}
+- {q: "offence of disclosing the content of a communication on a public network", doc: [UAE-TEL-2003]}
+- {q: "regulator power over quality of service and terms of service to users", doc: [UAE-TEL-2003]}
+- {q: "objectives of the telecommunications authority", doc: [UAE-TEL-2003]}
+- {q: "single point of contact for submarine cable repair", doc: [ITU-IAB-2026]}
+- {q: "time to permit and mean time to repair indicators", doc: [ITU-IAB-2026]}
+- {q: "cable protection zones restricting anchoring and trawling", doc: [ITU-IAB-2026, AU-TEL-1997]}
+- {q: "rerouting traffic after a submarine cable outage", doc: [ITU-IAB-2026]}
+- {q: "non-binding recommendations on submarine cable resilience", doc: [ITU-PORTO-2026, ITU-ABUJA-2025, ITU-IAB-2026]}
+- {q: "AI-enabled anomaly detection for cable strain", doc: [ITU-IAB-2026]}
+- {q: "priority routing for emergency responders during a public emergency", doc: [IN-TEL-S20, US-TSP]}
+- {q: "restoration priority levels for national security telecommunications", doc: [US-TSP]}
+- {q: "government power to restrict a network provider to protect public safety", doc: [UK-CA-132]}
+- {q: "AI used as safety component of critical digital infrastructure", doc: [EU-AIA-ANNEX3]}
+- {q: "human ability to override output of an AI system", doc: [EU-AIA-ART14]}
+- {q: "policy node in the machine learning pipeline", doc: [ITU-Y3172]}
+- {q: "SRC collector preprocessor model sink nodes", doc: [ITU-Y3172]}
+- {q: "network intelligence levels L0 to L5", doc: [ITU-Y3173]}
+- {q: "AI readiness factors and dimensions", doc: [ITU-AIREADY]}
+- {q: "UAE national AI strategy objectives", doc: [UAE-AI-2031]}
+- {q: "هل يمكن نقل البيانات الصحية إلى خارج الدولة؟", doc: [UAE-EXTRACTS, HEALTH-NOTES], lang: ar}
+- {q: "الحق في الاعتراض على القرارات الآلية", doc: [UAE-EXTRACTS, PDPL-NOTES, EU-AIA-ART14], lang: ar}
+- {q: "نقطة اتصال واحدة لإصلاح الكابلات البحرية", doc: [ITU-IAB-2026], lang: ar}
+- {q: "الأولوية في حالات الطوارئ لتوجيه الرسائل", doc: [IN-TEL-S20, US-TSP], lang: ar}
+- {q: "traffic management during exceptional network congestion", doc: [EU-OIR-A3]}
+- {q: "breaking or injury of a submarine cable", doc: [UNCLOS, ITU-IAB-2026]}

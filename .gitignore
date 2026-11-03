@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+corpus/raw/
+corpus/reference_docs/
+*.gguf
+.pytest_cache/
+docs/MARSA_Technical_Report.docx
+docs/MARSA_Technical_Report.pdf
+runs/qwen7/
+runs/final/

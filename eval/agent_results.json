@@ -1,0 +1,10 @@
+{
+ "runs/injected": {
+  "on_mandate": "16/16",
+  "with_claims": "16/16",
+  "adviser_on_topic": "5/5",
+  "missed": [],
+  "verified": 60,
+  "rejected": 0
+ }
+}

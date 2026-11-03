@@ -1,0 +1,59 @@
+# Domain-level gaps. The agent run confirms which ones a scenario actually triggers.
+gaps:
+- id: G1
+  title: Crisis rerouting versus data-localisation law
+  kind: legislative_gap
+  finding: Data-localisation texts restrict transfer abroad but do not say whether encrypted transit through a foreign network counts. Resilience guidance recommends rerouting without addressing that question.
+  tension: Continuity of care against health-data localisation
+  local_evidence:
+  - {doc: UAE-EXTRACTS, quote: "generated or transferred outside the State, unless in the cases defined by virtue of a decision issued"}
+  - {doc: UAE-EXTRACTS, quote: "Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State."}
+  global_examples:
+  - {doc: EDPB-05-2021, why: "Defines a transfer through cumulative criteria, including data being made available to an importer", quote: "identified the following three cumulative criteria to qualify a processing operation as a transfer"}
+  - {doc: ITU-IAB-2026, why: "Cites rerouting as the resilience response, with no data-protection analysis", quote: "reroute traffic through terrestrial connections with a neighbouring country"}
+  proposal: Define a crisis-transit carve-out covering encrypted, unstored transit, with conditions, a time limit and after-action reporting.
+- id: G2
+  title: No explicit emergency traffic-priority power
+  kind: unclear_responsibility
+  finding: The Telecom Law text reviewed sets general service powers but no named emergency priority scheme, priority classes or decision-maker.
+  tension: Equal treatment of users against protection of life-critical services
+  local_evidence:
+  - {doc: UAE-TEL-2003, quote: "the terms and level of services provided by the Licensees to users, including the standards and quality of service provided"}
+  global_examples:
+  - {doc: IN-TEL-S20, why: "Statutory priority routing for authorised responders during a public emergency", quote: "messages of a user or group of users authorised for response and recovery during public emergency are routed on priority"}
+  - {doc: US-TSP, why: "Pre-assigned restoration priority levels", quote: "for which provisioning or restoration priority levels are requested, assigned, and approved in accordance with this appendix"}
+  - {doc: EU-OIR-A3, why: "Traffic management allowed for exceptional congestion, with equal treatment inside a category", quote: "prevent impending network congestion and mitigate the effects of exceptional or temporary network congestion, provided that equivalent categories of traffic are treated equally"}
+  - {doc: UK-CA-132, why: "Ministerial direction power for public safety, public health or national security", quote: "to protect the public from any threat to public safety or public health"}
+  proposal: Pre-register priority classes before a crisis and name who activates them, for how long, and how it is reviewed.
+- id: G3
+  title: Standards stop at operator policy
+  kind: standards_gap
+  finding: The Y.3172 policy node applies policies to model output, but the Recommendation contains no regulatory, legal or oversight hook. Y.3173 grades human and system roles without tying them to legal authority.
+  tension: Machine-speed response against accountable authorisation
+  local_evidence:
+  - {doc: ITU-Y3172, quote: "This node enables the application of policies to the output of the model node"}
+  - {doc: ITU-Y3172, quote: "Such application of ML output may be controlled by network operator policies"}
+  global_examples:
+  - {doc: ITU-Y3173, why: "Levels separate human and system roles, the natural place to attach authorisation requirements", quote: "Action implementation process is performed fully by a human being"}
+  proposal: Extend the P node with a regulatory-policy function that returns a machine-readable verdict, the provision relied on and the approver.
+- id: G4
+  title: Accountability for AI acting on critical networks
+  kind: legislative_gap
+  finding: Global practice classes such AI as high risk and requires human override; the UAE instruments in this knowledge base set strategy, not a binding network-specific duty.
+  tension: Speed of autonomous action against meaningful human control
+  local_evidence:
+  - {doc: UAE-AI-2031, quote: "Ensure strong governance and effective regulation."}
+  global_examples:
+  - {doc: EU-AIA-ANNEX3, why: "High-risk class for critical digital infrastructure", quote: "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"}
+  - {doc: EU-AIA-ART14, why: "Right to override", quote: "or to otherwise disregard, override or reverse the output of the high-risk AI system"}
+  proposal: Require named human accountability, an override and retained logs for AI that can change traffic on critical networks.
+- id: G5
+  title: No visible single contact across repair, customs and telecom
+  kind: coordination_problem
+  finding: Repair and cross-border fault coordination span several agencies. The public texts reviewed name no single contact; global guidance recommends one.
+  tension: Fast repair against separate agency mandates
+  local_evidence: []
+  global_examples:
+  - {doc: ITU-IAB-2026, why: "Recommends a designated government contact", quote: "designating a government body to be the Single Point of Contact"}
+  - {doc: ITU-IAB-2026, why: "Singapore's one-stop model", quote: "takes a ‘one-stop shop’ approach as the designated single point of contact for the industry"}
+  proposal: Publish a crisis contact and a pre-agreed repair clearance procedure, with time-to-permit as a tracked indicator.

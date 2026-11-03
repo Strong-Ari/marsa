@@ -1,0 +1,100 @@
+# Policy-as-code. Every citation is checked verbatim against the knowledge base by `python -m marsa.validate`.
+# legal_status: clear = text decides it; ambiguous = text exists but its reach is unsettled; silent = no provision found.
+rules:
+- id: R-ROUTE-DOMESTIC
+  when: {type: reroute, foreign_hop: false, contains: [none, metadata]}
+  verdict: ALLOW
+  legal_status: clear
+  reason: Rerouting inside licensed capacity carries no cross-border data question.
+  citations:
+  - {doc: UAE-TEL-2003, locator: "Art. 13(1)", quote: "are sufficient to satisfy the public demands of those who wish to make use of such services"}
+- id: R-HEALTH-STORE-ABROAD
+  when: {type: [failover_compute, store_abroad], contains: [health_data], foreign_hop: true}
+  verdict: DENY
+  legal_status: clear
+  reason: Storing or processing health data abroad is barred unless a Health Authority decision defines the case.
+  approver: [health_authority]
+  citations:
+  - {doc: UAE-EXTRACTS, locator: "Federal Law 2/2019 Art. 13", quote: "The health information and data related to the health services provided in the State may not be stored, processed,"}
+  - {doc: UAE-EXTRACTS, locator: "Federal Law 2/2019 Art. 24", quote: "Whoever violates the provisions of Article (13) of this Law shall be punished by a fine of not less than"}
+- id: R-HEALTH-TRANSIT
+  when: {type: reroute, contains: [health_data], foreign_hop: true}
+  verdict: HOLD
+  legal_status: ambiguous
+  reason: The statute bars transfer outside the State but does not say whether encrypted transit through a foreign network is a transfer.
+  approver: [health_authority, regulator]
+  gaps: [G1]
+  citations:
+  - {doc: UAE-EXTRACTS, locator: "Federal Law 2/2019 Art. 13", quote: "generated or transferred outside the State, unless in the cases defined by virtue of a decision issued"}
+  - {doc: EDPB-05-2021, locator: "para. 9, p. 7", quote: "identified the following three cumulative criteria to qualify a processing operation as a transfer"}
+- id: R-PERSONAL-TRANSIT
+  when: {type: reroute, contains: [personal_data], foreign_hop: true}
+  verdict: HOLD
+  legal_status: ambiguous
+  reason: Cross-border processing is defined to include transmission outside the State; the public-interest route needs a named decision-maker.
+  approver: [data_office]
+  gaps: [G1]
+  citations:
+  - {doc: UAE-EXTRACTS, locator: "Decree-Law 45/2021 Art. 1", quote: "Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State."}
+  - {doc: UAE-EXTRACTS, locator: "Decree-Law 45/2021 Art. 23", quote: "If the transfer is necessary to protect the public interest."}
+- id: R-PRIORITY
+  when: {type: [prioritise, throttle]}
+  verdict: HOLD
+  legal_status: silent
+  reason: No emergency priority power was found in the Telecom Law text; the regulator's general service powers are the nearest footing.
+  approver: [regulator, crisis_authority]
+  gaps: [G2]
+  citations:
+  - {doc: UAE-TEL-2003, locator: "Art. 14(3)", quote: "the terms and level of services provided by the Licensees to users, including the standards and quality of service provided"}
+  - {doc: EU-OIR-A3, locator: "Art. 3(3)(c), comparative", quote: "provided that equivalent categories of traffic are treated equally"}
+- id: R-CONTENT-INSPECTION
+  when: {classification: [content]}
+  verdict: DENY
+  legal_status: clear
+  reason: Classifying traffic by reading content risks copying or disclosing communications. Use address or service tags instead.
+  citations:
+  - {doc: UAE-TEL-2003, locator: "Art. 72(3)", quote: "copies, discloses, or spreads the content of any communication through a Public Telecommunication Network without having the right to do so"}
+- id: R-AUTONOMY
+  when: {autonomy: auto, impact_at_least: medium}
+  verdict: HOLD
+  legal_status: silent
+  reason: AI output steering critical infrastructure needs a human able to override it. No UAE instrument found sets this for networks, so MARSA applies the stricter global pattern.
+  approver: [human_duty_officer]
+  gaps: [G4]
+  citations:
+  - {doc: EU-AIA-ANNEX3, locator: "Annex III point 2", quote: "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"}
+  - {doc: EU-AIA-ART14, locator: "Art. 14(4)(d)", quote: "or to otherwise disregard, override or reverse the output of the high-risk AI system"}
+  - {doc: ITU-Y3173, locator: "Table 7-1", quote: "Action implementation process is performed fully by a human being"}
+- id: R-TELEMETRY-SHARE
+  when: {type: share_telemetry, foreign_hop: true}
+  verdict: HOLD
+  legal_status: silent
+  reason: Sharing fault telemetry with a foreign party helps repair but has no defined channel or owner.
+  approver: [regulator]
+  gaps: [G5]
+  citations:
+  - {doc: ITU-IAB-2026, locator: "Rec. on SPOC", quote: "designating a government body to be the Single Point of Contact"}
+- id: R-REPAIR-PERMIT
+  when: {type: repair_request}
+  verdict: HOLD
+  legal_status: silent
+  reason: Repair clearance crosses maritime, customs and telecom agencies, and the public texts reviewed name no single contact.
+  approver: [regulator, crisis_authority]
+  gaps: [G5]
+  citations:
+  - {doc: ITU-IAB-2026, locator: "Rec. on SPOC", quote: "designating a government body to be the Single Point of Contact"}
+- id: R-PUBLIC-ATTRIBUTION
+  when: {type: public_statement, attribution: unverified}
+  verdict: DENY
+  legal_status: clear
+  reason: AI agents never publish an unverified cause. Attribution stays with the competent human authorities.
+  approver: [crisis_authority]
+  citations:
+  - {doc: ITU-PORTO-2026, locator: "Declaration", quote: "coordination and cooperation among relevant authorities"}
+- id: R-ROLLBACK
+  when: {type: rollback}
+  verdict: ALLOW
+  legal_status: clear
+  reason: Returning to the last human-approved state is always permitted and logged.
+  citations:
+  - {doc: EU-AIA-ART14, locator: "Art. 14(4)(d)", quote: "or to otherwise disregard, override or reverse the output of the high-risk AI system"}

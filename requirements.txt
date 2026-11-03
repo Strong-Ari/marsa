@@ -1,0 +1,14 @@
+faiss-cpu
+rank_bm25
+pymupdf
+beautifulsoup4
+lxml
+pyyaml
+networkx
+sentence-transformers
+scikit-learn
+numpy
+python-docx
+pytest
+# optional, for a local model
+llama-cpp-python

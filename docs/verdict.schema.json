@@ -1,0 +1,6 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"RPF verdict","type":"object",
+"required":["action","verdict","legal_status","rules","approver","citations","gaps"],
+"properties":{"action":{"type":"string"},"verdict":{"enum":["ALLOW","HOLD","DENY"]},"legal_status":{"enum":["clear","ambiguous","silent"]},
+"rules":{"type":"array","items":{"type":"string"}},"approver":{"type":"array","items":{"type":"string"}},
+"citations":{"type":"array","items":{"type":"object","required":["doc","quote"],"properties":{"doc":{"type":"string"},"locator":{"type":"string"},"quote":{"type":"string"}}}},
+"gaps":{"type":"array","items":{"type":"string"}}}}

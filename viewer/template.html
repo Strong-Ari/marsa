@@ -1,0 +1,93 @@
+<title>MARSA Incident Room</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: an exercise log. A time rail steers one event sheet; findings and audit sit behind tabs. */
+:root{--bg:#e9efef;--panel:#f6f9f8;--line:#c3d0d0;--ink:#102c35;--muted:#4f6a70;--sea:#0d5c6e;--seafill:#d3e6e8;
+--allow:#176b45;--allowbg:#d9efe3;--hold:#8a5a00;--holdbg:#f8e8c4;--deny:#a12a22;--denybg:#f7dcd8;
+--disp:"Archivo Narrow","Arial Narrow",sans-serif;--body:"Atkinson Hyperlegible",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1f26;--panel:#14292f;--line:#2b464d;--ink:#e3eeee;--muted:#9db4b8;--sea:#6cc4d3;--seafill:#1d3e47;--allow:#7bd7a6;--allowbg:#143a2a;--hold:#f0c56a;--holdbg:#40310f;--deny:#f5a097;--denybg:#47201c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d1f26;--panel:#14292f;--line:#2b464d;--ink:#e3eeee;--muted:#9db4b8;--sea:#6cc4d3;--seafill:#1d3e47;--allow:#7bd7a6;--allowbg:#143a2a;--hold:#f0c56a;--holdbg:#40310f;--deny:#f5a097;--denybg:#47201c;color-scheme:dark}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--body)}
+.wrap{max-width:1120px;margin:0 auto;padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:20px}
+h1,h2,h3{font-family:var(--disp);margin:0;text-wrap:balance;line-height:1.15}h1{font-size:clamp(30px,5vw,44px)}h2{font-size:24px}h3{font-size:19px}
+p{margin:0}.lede{max-width:68ch;color:var(--muted)}
+.notice{font-size:14px;color:var(--muted);border-left:3px solid var(--sea);padding-left:10px;max-width:80ch}
+nav{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+nav button{all:unset;cursor:pointer;padding:8px 14px;font:700 16px var(--disp);color:var(--muted);border-bottom:3px solid transparent}
+nav button[aria-selected="true"]{color:var(--ink);border-color:var(--sea)}nav button:focus-visible,.tick:focus-visible,.btn:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
+.rail{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}
+.tick{all:unset;cursor:pointer;min-width:72px;padding:6px 8px;border:1px solid var(--line);background:var(--panel);font:600 13px var(--mono);text-align:center}
+.tick[aria-current="true"]{background:var(--sea);color:var(--bg);border-color:var(--sea)}.tick.j{border-style:dashed}
+.grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:20px}@media(max-width:800px){.grid{grid-template-columns:minmax(0,1fr)}}
+.col{display:grid;gap:14px;align-content:start;min-width:0}
+.sheet{background:var(--panel);border:1px solid var(--line);padding:16px;display:grid;gap:10px;min-width:0}
+.meta{font:13px var(--mono);color:var(--muted);overflow-wrap:anywhere}
+.stamp{display:inline-block;font:600 13px var(--mono);padding:2px 8px;border:1.5px solid currentColor;letter-spacing:.06em}
+.ALLOW{color:var(--allow);background:var(--allowbg)}.HOLD{color:var(--hold);background:var(--holdbg)}.DENY{color:var(--deny);background:var(--denybg)}
+.dec{display:grid;gap:6px;padding-block:10px;border-top:1px solid var(--line)}.dec:first-of-type{border-top:0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+blockquote{margin:0;padding:6px 10px;background:var(--seafill);font-size:15px;overflow-wrap:anywhere}
+details summary{cursor:pointer;font-weight:700}details{display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:96px minmax(0,1fr) 44px;gap:8px;align-items:center;font:13px var(--mono)}
+.track{height:12px;background:var(--seafill)}.fill{height:100%;background:var(--sea)}
+table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid var(--line)}th{font:700 15px var(--disp)}
+.tw{overflow-x:auto}.tn{font-variant-numeric:tabular-nums}
+.btn{all:unset;cursor:pointer;padding:6px 12px;border:1px solid var(--sea);color:var(--sea);font:700 15px var(--disp)}
+.chain{font:12px/1.6 var(--mono);overflow-wrap:anywhere}
+a{color:var(--sea)}
+select{font:15px var(--body);padding:4px 6px;background:var(--panel);color:var(--ink);border:1px solid var(--line);max-width:100%}
+</style>
+<div class="wrap">
+<header style="display:grid;gap:8px">
+<h1>MARSA Incident Room</h1>
+<p class="lede">Policy-gated AI agents working through a fictional double subsea-cable failure. Agents propose, a deterministic gateway decides, and people approve anything the law leaves open.</p>
+<p class="notice" id="note"></p>
+</header>
+<nav role="tablist" id="tabs"></nav>
+<section id="view"></section>
+</div>
+<script>
+const DATA=/*__DATA__*/null;
+const $=(s,e=document)=>e.querySelector(s),esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const TABS=[["ex","Exercise"],["try","Try the gateway"],["gaps","Policy gaps"],["maps","Standards mapping"],["kb","Knowledge base"],["audit","Audit trail"]];
+let tab="ex",idx=0,inj=false;
+const run=()=>inj?DATA.run_injected:DATA.run;
+$("#note").textContent=DATA.run.scenario.note+" Model used: "+DATA.run.backend+".";
+function nav(){$("#tabs").innerHTML=TABS.map(([k,l])=>`<button role="tab" aria-selected="${k==tab}" data-k="${k}">${l}</button>`).join("");}
+$("#tabs").onclick=e=>{const k=e.target.dataset.k;if(k){tab=k;render()}};
+function ex(){const R=run(),E=R.events[Math.min(idx,R.events.length-1)];
+const dec=E.decisions.map(d=>`<div class="dec"><div class="row"><span class="stamp ${d.verdict}">${d.verdict}</span><b>${esc(d.description)}</b></div>
+<p>${d.reasons.map(esc).join(" ")}</p><div class="meta">${esc(d.action)} · law: ${esc(d.legal_status)} · rules ${esc(d.rules.join(", "))}${d.gaps.length?" · gaps "+esc(d.gaps.join(", ")):""}${d.approver.length?" · approver "+esc(d.approver.join(", ")):""}</div>
+${d.citations.slice(0,2).map(c=>`<blockquote>${esc(c.quote)}<div class="meta">${esc(c.doc)} ${esc(c.locator)}</div></blockquote>`).join("")}
+${d.human?`<p><b>Human decision:</b> ${esc(d.human.decision.replace("_"," "))}. ${esc(d.human.note)}</p>`:""}</div>`).join("")||"<p>No action proposed at this step.</p>";
+const ag=E.assessments.map(a=>`<details><summary>${esc(a.name)} · ${a.claims.length} verified${a.rejected?`, ${a.rejected} rejected`:""}</summary><p><b>Agent advice, not verified:</b> ${esc(a.recommendation)}</p>${a.claims.map(c=>`<blockquote>${esc(c.quote)}<div class="meta">${esc(c.title)}, ${esc(c.locator)} (${esc(c.force)}, ${esc(c.jurisdiction)})</div></blockquote>`).join("")}</details>`).join("");
+const bars=Object.entries(E.served).map(([k,v])=>`<div class="bar"><span>${k}</span><div class="track"><div class="fill" style="width:${v*100}%"></div></div><span class="tn">${Math.round(v*100)}%</span></div>`).join("");
+$("#view").innerHTML=`<div style="display:grid;gap:14px"><div class="row"><button class="btn" id="inj">${inj?"Remove the judge's event":"Add a judge's event"}</button></div>
+<div class="rail">${R.events.map((e,i)=>`<button class="tick ${e.id[0]=="J"?"j":""}" aria-current="${i==idx}" data-i="${i}">T+${e.t}</button>`).join("")}</div>
+<div class="grid"><div class="col"><div class="sheet"><div class="meta">${esc(E.id)} · minute ${E.t} · sent to ${esc(E.to.join(", "))}</div><h2>${esc(E.text)}</h2></div><div class="sheet"><h3>Gateway decisions</h3>${dec}</div></div>
+<div class="col"><div class="sheet"><h3>Traffic served</h3><div class="meta">Capacity ${E.capacity} Gbps, synthetic model</div>${bars}</div><div class="sheet"><h3>Agent assessments</h3>${ag}</div></div></div></div>`;
+$("#inj").onclick=()=>{inj=!inj;idx=inj?run().events.findIndex(e=>e.id[0]=="J"):0;render()};
+$(".rail").onclick=e=>{if(e.target.dataset.i){idx=+e.target.dataset.i;render()}};}
+const P={type:{reroute:"Reroute traffic",prioritise:"Prioritise a class",throttle:"Slow a class",failover_compute:"Fail compute over",store_abroad:"Store data abroad",share_telemetry:"Share telemetry",repair_request:"Request repair clearance",public_statement:"Publish a statement",reclassify:"Reclassify traffic",rollback:"Roll back a change",other:"Something new"},
+route:{domestic:"Domestic landing",foreign:"Through another state"},data:{none:"None",metadata:"Metadata only",personal_data:"Personal data",health_data:"Health data"},classification:{tag:"Service tags",content:"Reads content"},autonomy:{human:"Human executes",auto:"AI executes"},impact:{low:"Low",medium:"Medium",high:"High"},attribution:{verified:"Verified",unverified:"Unverified"}};
+const LBL={type:"Action",route:"Path",data:"Data carried",classification:"Traffic classified by",autonomy:"Who executes",impact:"Impact",attribution:"Cause"};
+const PRE={"Encrypted hospital traffic abroad":{type:"reroute",route:"foreign",data:"health_data",classification:"tag",autonomy:"human",impact:"high",attribution:"verified"},"Hospital AI on foreign cloud":{type:"failover_compute",route:"foreign",data:"health_data",classification:"tag",autonomy:"human",impact:"high",attribution:"verified"},"AI ranks traffic alone":{type:"prioritise",route:"domestic",data:"none",classification:"tag",autonomy:"auto",impact:"high",attribution:"verified"},"Deep packet inspection":{type:"reclassify",route:"domestic",data:"none",classification:"content",autonomy:"human",impact:"high",attribution:"verified"},"Blame sabotage publicly":{type:"public_statement",route:"domestic",data:"none",classification:"tag",autonomy:"auto",impact:"high",attribution:"unverified"}};
+let F={...Object.values(PRE)[0]};
+const L={low:0,medium:1,high:2},O={ALLOW:0,HOLD:1,DENY:2},ST={clear:0,ambiguous:1,silent:2};
+function match(w,a){for(const[k,v]of Object.entries(w)){if(k=="foreign_hop"){if((a.hops.filter(h=>!["UAE","INT-WATERS","SPACE"].includes(h)).length>0)!=v)return false}else if(k=="impact_at_least"){if(L[a.impact]<L[v])return false}else if(Array.isArray(v)){const x=a[k];if(Array.isArray(x)){if(!x.some(i=>v.includes(i)))return false}else if(!v.includes(x))return false}else if(a[k]!==v)return false}return true}
+function evaluate(a){const h=DATA.rules.filter(r=>match(r.when||{},a));if(!h.length)return{verdict:"HOLD",legal_status:"silent",rules:[],approver:["human_duty_officer"],citations:[],gaps:[],reasons:["No rule covers this action, so it cannot run automatically."]};
+return{verdict:h.reduce((b,r)=>O[r.verdict]>O[b]?r.verdict:b,"ALLOW"),legal_status:h.reduce((b,r)=>ST[r.legal_status||"clear"]>ST[b]?r.legal_status:b,"clear"),rules:h.map(r=>r.id),approver:[...new Set(h.flatMap(r=>r.approver||[]))].sort(),citations:h.flatMap(r=>r.citations||[]),gaps:[...new Set(h.flatMap(r=>r.gaps||[]))].sort(),reasons:h.map(r=>r.reason)}}
+function tryit(){const a={...F,hops:F.route=="foreign"?["UAE","NEIGHBOUR-A"]:["UAE","INT-WATERS"],contains:[F.data]},v=evaluate(a);
+$("#view").innerHTML=`<div class="grid"><div class="col"><div class="sheet"><h3>Build an action</h3><p>This is the same rule set the exercise uses, running in your browser. No model is involved.</p><div class="row">${Object.keys(PRE).map(k=>`<button class="btn" data-p="${k}">${k}</button>`).join("")}</div>
+${Object.keys(P).map(k=>`<label class="row" for="f-${k}" style="justify-content:space-between"><span>${LBL[k]}</span><select id="f-${k}" data-k="${k}">${Object.entries(P[k]).map(([x,l])=>`<option value="${x}" ${F[k]==x?"selected":""}>${l}</option>`).join("")}</select></label>`).join("")}</div></div>
+<div class="col"><div class="sheet"><div class="row"><span class="stamp ${v.verdict}">${v.verdict}</span><span class="meta">law: ${v.legal_status}</span></div><p>${v.reasons.map(esc).join(" ")}</p>${v.approver.length?`<p><b>Approver:</b> ${esc(v.approver.join(", ").replace(/_/g," "))}</p>`:""}${v.gaps.length?`<p><b>Gap raised:</b> ${esc(v.gaps.join(", "))}</p>`:""}${v.citations.map(c=>`<blockquote>${esc(c.quote)}<div class="meta">${esc(c.doc)} ${esc(c.locator)}</div></blockquote>`).join("")}<p class="meta">Rules: ${esc(v.rules.join(", ")||"none matched")}</p></div></div></div>`;
+$("#view").querySelectorAll("select").forEach(s=>s.onchange=()=>{F[s.dataset.k]=s.value;tryit()});$("#view").querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{F={...PRE[b.dataset.p]};tryit()})}
+function gaps(){$("#view").innerHTML=`<div class="col">`+DATA.gaps.map(g=>`<div class="sheet"><div class="meta">${g.id} · ${esc(g.kind.replace(/_/g," "))}${DATA.run.gaps_triggered[g.id]?" · raised by "+DATA.run.gaps_triggered[g.id].map(x=>x.action).join(", "):" · found in document mapping"}</div><h3>${esc(g.title)}</h3><p>${esc(g.finding)}</p><p><b>Tension:</b> ${esc(g.tension)}</p>${g.global_examples.map(x=>`<blockquote>${esc(x.quote)}<div class="meta">${esc(x.doc)}: ${esc(x.why)}</div></blockquote>`).join("")}<p><b>Proposed fix:</b> ${esc(g.proposal)}</p></div>`).join("")+`<div class="sheet"><h3>How silence was tested</h3><div class="tw"><table><tr><th>Document</th><th>Term counts</th></tr>${DATA.absence.map(a=>`<tr><td>${a.doc}</td><td class="tn">${Object.entries(a.counts).map(([k,v])=>k+": "+v).join(", ")}</td></tr>`).join("")}</table></div><p class="meta">A zero count covers only the text in this knowledge base. It does not rule out instruments that are not public.</p></div></div>`}
+function maps(){$("#view").innerHTML=`<div class="sheet"><div class="tw"><table><tr><th>Node</th><th>MARSA</th><th>Readiness dimensions</th><th>Documents</th></tr>${DATA.mapping.map(m=>`<tr><td><b>${m.node}</b></td><td>${esc(m.marsa)}</td><td>${esc(m.readiness)}</td><td>${esc(m.docs)}</td></tr>`).join("")}</table></div></div>`}
+function kb(){const r=DATA.eval.retrieval,g=DATA.eval.evidence_gate;$("#view").innerHTML=`<div class="col"><div class="sheet"><h3>Retrieval benchmark, ${DATA.eval.n_queries} queries</h3><div class="tw"><table><tr><th>Mode</th><th>Hit@1</th><th>Hit@5</th><th>MRR</th><th>Arabic hit@5</th></tr>${Object.entries(r).map(([k,v])=>`<tr><td>${k}</td><td class="tn">${v["hit@1"]}</td><td class="tn">${v["hit@5"]}</td><td class="tn">${v.mrr}</td><td class="tn">${v["arabic_hit@5"]}</td></tr>`).join("")}</table></div><p>Agent sources matched their mandate in ${DATA.agent_eval.on_mandate} assessments, and the Global Adviser cited a comparator in ${DATA.agent_eval.adviser_on_topic} consultations.</p><p>Evidence gate: ${g.genuine_quotes_passed} genuine quotes passed and ${g.tampered_quotes_rejected} tampered quotes rejected.</p></div><div class="sheet"><h3>Core documents</h3><div class="tw"><table><tr><th>ID</th><th>Title</th><th>Force</th><th>Chunks</th></tr>${DATA.inventory.map(d=>`<tr><td class="meta">${d.id}</td><td><a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.title)}</a>${d.caveat?`<div class="meta">${esc(d.caveat)}</div>`:""}</td><td>${d.force}</td><td class="tn">${d.chunks}</td></tr>`).join("")}</table></div></div></div>`}
+function audit(){const a=DATA.run.audit;$("#view").innerHTML=`<div class="sheet"><h3>${a.entries} chained entries, ${a.verified?"chain verified":"chain broken"}</h3><p>Each entry stores the hash of the one before it, so changing any line breaks everything after it.</p><div class="chain">Head: ${a.head}</div><div class="tw"><table><tr><th>Seq</th><th>Min</th><th>Actor</th><th>Kind</th><th>Hash</th></tr>${DATA.audit.map(e=>`<tr><td class="tn">${e.body.seq}</td><td class="tn">${e.body.t_min}</td><td>${esc(e.body.actor)}</td><td>${esc(e.body.kind)}</td><td class="chain">${e.hash.slice(0,16)}</td></tr>`).join("")}</table></div></div>`}
+function render(){nav();({ex,try:tryit,gaps,maps,kb,audit})[tab]()}
+render();
+</script>
