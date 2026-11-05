@@ -78,6 +78,10 @@ G=[("G1 Legislative gap, transit vs transfer. ","Federal Law 2/2019 Art. 13 bars
 q=h
 for a,b in G: q=after(q,b,bold_lead=a,model=BODY)
 q=after(q,f"Hybrid retrieval reached hit@5 {R['hit@5']} and MRR {R['mrr']} on {EV['n_queries']} queries, against MRR {D['mrr']} for dense search alone; Arabic queries reached {R['arabic_hit@5']}. The benchmark is small and was used for tuning. The evidence gate rejected {EV['evidence_gate']['tampered_quotes_rejected']} tampered quotes. It proves a quote exists, so free-text agent advice is still shown as unverified. Testing shaped the gate: real quotes once carried an invented sabotage claim and unrelated conclusions, so we added an unconfirmed-cause check, a claim-to-quote overlap check and comparative labels. Overlap is a proxy, not proof of entailment. Limits: the Telecom Law editions are not confirmed as current, the Arabic text is OCR, health and data laws are short extracts, blank cells in our eight-jurisdiction comparison mean not reviewed, a zero count does not exclude unpublished instruments, and nothing here is legal advice.",bold_lead="Evaluation and limits. ",model=BODY)
+B="https://github.com/Strong-Ari/marsa"
+LINKS=[("Source code, GitHub repository",B),("Knowledge base, indexed policies, laws and strategies",B+"/tree/main/kb"),("Source inventory with origins and hashes",B+"/blob/main/kb/inventory.json"),("Policy rules and gap catalogue",B+"/tree/main/rules"),("Global comparison matrix",B+"/blob/main/rules/matrix.yaml"),("Crisis scenario",B+"/blob/main/scenarios/dual_cable_loss.yaml"),("Full run: audit log and after-action report",B+"/tree/main/runs/final"),("Demo video, 70 seconds, captioned",B+"/blob/main/docs/media/marsa_demo.mp4"),("Interactive Incident Room page (download and open)",B+"/blob/main/viewer/marsa_incident_room.html"),("Proposed Y.3172 regulatory-policy function",B+"/blob/main/docs/y3172_regulatory_policy_function.md")]
+q=after(q,"",bold_lead="Submission links",model=BODY)
+for a,b in LINKS: q=after(q,b,bold_lead=a+": ",model=BODY,size=9.5)
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 for pp in d.paragraphs:
