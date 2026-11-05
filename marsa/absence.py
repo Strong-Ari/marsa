@@ -3,6 +3,8 @@ import json, re, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent.parent
 TESTS=[("UAE-TEL-2003",["emergency","disaster","crisis","priority"]),
+       ("UAE-TEL-AR",["طوارئ","الطوارئ","أزمة","كوارث","كارثة","أولوية","الأولوية","الأمن القومي"]),
+       ("UAE-AI-CHARTER",["telecom","network","critical infrastructure"]),
        ("ITU-IAB-2026",["privacy","personal data","data protection","data localisation","data localization","human oversight"]),
        ("ITU-Y3172",["regulat","legal","oversight"]),
        ("ITU-Y3173",["regulat","legal"])]

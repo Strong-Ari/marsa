@@ -1,5 +1,6 @@
 """Build the self-contained Incident Room page from run outputs."""
 import json, sys, yaml
+from .after_action import build
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent.parent
 MAP=[
@@ -17,7 +18,8 @@ def main(a="runs/final",out="viewer/marsa_incident_room.html"):
     inj=r(a+"/run.json"); inj["backend"]=NAMES.get(inj["backend"],inj["backend"])
     base=dict(inj,events=[e for e in inj["events"] if not e["id"].startswith("J")])
     d={"run":base,"run_injected":inj,"gaps":yaml.safe_load((ROOT/"rules/gaps.yaml").read_text())["gaps"],
-       "absence":r("eval/absence.json"),"rules":yaml.safe_load((ROOT/"rules/policy_rules.yaml").read_text())["rules"],"agent_eval":r("eval/agent_results.json")[a],"eval":r("eval/results.json"),"mapping":MAP,
+       "absence":r("eval/absence.json"),"matrix":yaml.safe_load((ROOT/"rules/matrix.yaml").read_text()),"aar":build(inj),
+       "chunks":[{k:c.get(k) for k in ("text","title","article","page","force","jurisdiction")} for c in map(json.loads,(ROOT/"kb/chunks.jsonl").open()) if c["tier"]==1],"rules":yaml.safe_load((ROOT/"rules/policy_rules.yaml").read_text())["rules"],"agent_eval":r("eval/agent_results.json")[a],"eval":r("eval/results.json"),"mapping":MAP,
        "inventory":[x for x in r("kb/inventory.json") if x["tier"]==1],
        "audit":[json.loads(l) for l in (ROOT/a/"audit.jsonl").open()]}
     t=(ROOT/"viewer/template.html").read_text().replace("/*__DATA__*/null",json.dumps(d,ensure_ascii=False).replace("</","<\\/"))

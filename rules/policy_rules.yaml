@@ -47,6 +47,16 @@ rules:
   citations:
   - {doc: UAE-TEL-2003, locator: "Art. 14(3)", quote: "the terms and level of services provided by the Licensees to users, including the standards and quality of service provided"}
   - {doc: EU-OIR-A3, locator: "Art. 3(3)(c), comparative", quote: "provided that equivalent categories of traffic are treated equally"}
+- id: R-INCLUSION
+  when: {type: reserve_access}
+  verdict: HOLD
+  legal_status: silent
+  reason: Crisis priority lists tend to follow contracts, so people without an account manager lose out first. No provision found sets a minimum for public and accessibility services.
+  approver: [regulator]
+  gaps: [G2]
+  citations:
+  - {doc: UAE-TEL-2003, locator: "Art. 13(1)", quote: "are sufficient to satisfy the public demands of those who wish to make use of such services"}
+  - {doc: ITU-AIREADY, locator: "Dimension 11", quote: "This dimension aims to study bridging the divides in society using AI."}
 - id: R-CONTENT-INSPECTION
   when: {classification: [content]}
   verdict: DENY
@@ -54,14 +64,16 @@ rules:
   reason: Classifying traffic by reading content risks copying or disclosing communications. Use address or service tags instead.
   citations:
   - {doc: UAE-TEL-2003, locator: "Art. 72(3)", quote: "copies, discloses, or spreads the content of any communication through a Public Telecommunication Network without having the right to do so"}
+  - {doc: UAE-TEL-AR, locator: "Arabic text", quote: "كل من نسخ أو أفشى أو وزع بدون وجه حق فحوى أي اتصال"}
 - id: R-AUTONOMY
   when: {autonomy: auto, impact_at_least: medium}
   verdict: HOLD
   legal_status: silent
-  reason: AI output steering critical infrastructure needs a human able to override it. No UAE instrument found sets this for networks, so MARSA applies the stricter global pattern.
+  reason: AI output steering critical infrastructure needs a human able to override it. The UAE AI Charter states human oversight as a principle, so MARSA enforces it through the stricter global pattern.
   approver: [human_duty_officer]
   gaps: [G4]
   citations:
+  - {doc: UAE-AI-CHARTER, locator: "Principle 6", quote: "human oversight over AI, aligning with ethical values and social standards to correct any errors or biases"}
   - {doc: EU-AIA-ANNEX3, locator: "Annex III point 2", quote: "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"}
   - {doc: EU-AIA-ART14, locator: "Art. 14(4)(d)", quote: "or to otherwise disregard, override or reverse the output of the high-risk AI system"}
   - {doc: ITU-Y3173, locator: "Table 7-1", quote: "Action implementation process is performed fully by a human being"}

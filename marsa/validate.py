@@ -12,6 +12,8 @@ def main():
         items+=[(r["id"],c) for c in r.get("citations",[])]
     for g in yaml.safe_load((ROOT/"rules/gaps.yaml").read_text())["gaps"]:
         items+=[(g["id"],c) for c in g.get("local_evidence",[])+g.get("global_examples",[])]
+    for g,row in yaml.safe_load((ROOT/"rules/matrix.yaml").read_text())["rows"].items():
+        items+=[(f"{g}/{k}",c) for k,c in row.items()]
     bad=[(i,c) for i,c in items if not any(_n(c["quote"]) in t for t in txt.get(c["doc"],[]))]
     print(f"{len(items)-len(bad)}/{len(items)} citations verified verbatim")
     for i,c in bad: print("MISSING",i,c["doc"],c["quote"][:90])

@@ -12,6 +12,30 @@
   "chunks": 121
  },
  {
+  "id": "UAE-TEL-AR",
+  "title": "المرسوم بقانون اتحادي رقم 3 لسنة 2003 وتعديلاته بشأن تنظيم قطاع الاتصالات (Telecom Law, Arabic amended edition, OCR)",
+  "authority": "UAE / TRA",
+  "jurisdiction": "UAE",
+  "force": "binding",
+  "tier": 1,
+  "url": "https://www.wipo.int/wipolex/en/legislation/details/13893",
+  "caveat": "OCR of an amended Arabic edition; check the official text",
+  "sha256": "8834004b7bf63290ec31536cef679d55546719a98275784f9731b4d972b5b861",
+  "chunks": 70
+ },
+ {
+  "id": "UAE-AI-CHARTER",
+  "title": "UAE Charter for the Development and Use of Artificial Intelligence (2024)",
+  "authority": "UAE AI Office",
+  "jurisdiction": "UAE",
+  "force": "soft_law",
+  "tier": 1,
+  "url": "https://ai.gov.ae/wp-content/uploads/2024/07/UAEAI-Methaq-EN2-3.pdf",
+  "caveat": null,
+  "sha256": "2f1de5776449748a91964cd5b061f88b36265ba0be8a5d7a91120e27a6908c1c",
+  "chunks": 7
+ },
+ {
   "id": "UAE-EXTRACTS",
   "title": "UAE health-data and personal-data statutes, curated verbatim extracts",
   "authority": "UAE Legislation portal / MoJ",

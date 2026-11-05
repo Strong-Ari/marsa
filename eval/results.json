@@ -14,15 +14,15 @@
    "arabic_hit@5": "0/4"
   },
   "hybrid+boost1": {
-   "hit@1": 0.844,
+   "hit@1": 0.75,
    "hit@5": 0.906,
-   "mrr": 0.875,
+   "mrr": 0.818,
    "arabic_hit@5": "3/4"
   },
   "hybrid+boost1.5": {
-   "hit@1": 0.875,
+   "hit@1": 0.781,
    "hit@5": 0.938,
-   "mrr": 0.901,
+   "mrr": 0.845,
    "arabic_hit@5": "4/4"
   }
  },

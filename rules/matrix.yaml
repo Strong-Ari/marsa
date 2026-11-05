@@ -1,0 +1,22 @@
+# Who has what, per gap. status: provides, partial, open (text reviewed, gap stands). Blank cells were not reviewed.
+columns: [UAE, EU, UK, US, India, Singapore, ASEAN, ITU]
+rows:
+  G1:
+    UAE: {status: open, doc: UAE-EXTRACTS, quote: "generated or transferred outside the State, unless in the cases defined by virtue of a decision issued"}
+    EU: {status: partial, doc: EDPB-05-2021, quote: "identified the following three cumulative criteria to qualify a processing operation as a transfer"}
+    ITU: {status: open, doc: ITU-IAB-2026, quote: "reroute traffic through terrestrial connections with a neighbouring country"}
+  G2:
+    UAE: {status: partial, doc: UAE-TEL-AR, quote: "وتقتضيها مصلحة الأمن القومي أو العلاقات الدولية"}
+    EU: {status: partial, doc: EU-OIR-A3, quote: "mitigate the effects of exceptional or temporary network congestion"}
+    UK: {status: partial, doc: UK-CA-132, quote: "to protect the public from any threat to public safety or public health"}
+    US: {status: provides, doc: US-TSP, quote: "for which provisioning or restoration priority levels are requested, assigned, and approved in accordance with this appendix"}
+    India: {status: provides, doc: IN-TEL-S20, quote: "messages of a user or group of users authorised for response and recovery during public emergency are routed on priority"}
+  G3:
+    ITU: {status: open, doc: ITU-Y3172, quote: "Such application of ML output may be controlled by network operator policies"}
+  G4:
+    UAE: {status: partial, doc: UAE-AI-CHARTER, quote: "human oversight over AI, aligning with ethical values and social standards to correct any errors or biases"}
+    EU: {status: provides, doc: EU-AIA-ANNEX3, quote: "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"}
+    ASEAN: {status: partial, doc: REF-ASEAN-AI-Governance-Ethics-Guide-2024, quote: "AI systems that have high severity and probability of harm should adopt a human-in-the-loop approach"}
+  G5:
+    Singapore: {status: provides, doc: ITU-IAB-2026, quote: "takes a ‘one-stop shop’ approach as the designated single point of contact for the industry"}
+    ITU: {status: provides, doc: ITU-IAB-2026, quote: "designating a government body to be the Single Point of Contact"}

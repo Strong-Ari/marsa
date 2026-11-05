@@ -1,8 +1,8 @@
 {
  "runs/final": {
-  "on_mandate": "11/16",
-  "with_claims": "11/16",
-  "adviser_on_topic": "1/5",
+  "on_mandate": "12/18",
+  "with_claims": "12/18",
+  "adviser_on_topic": "1/6",
   "missed": [
    [
     "E4",
@@ -23,9 +23,13 @@
    [
     "E7",
     "netops"
+   ],
+   [
+    "E8",
+    "netops"
    ]
   ],
-  "verified": 17,
-  "rejected": 12
+  "verified": 18,
+  "rejected": 15
  }
 }

@@ -113,7 +113,7 @@
        "jurisdiction": "UAE",
        "force": "binding",
        "url": "https://www.wipo.int/wipolex/en/legislation/details/13893",
-       "locator": "Article (14"
+       "locator": "Article (14)"
       }
      ],
      "rejected": 0,
@@ -193,6 +193,11 @@
        "quote": "provided that equivalent categories of traffic are treated equally"
       },
       {
+       "doc": "UAE-AI-CHARTER",
+       "locator": "Principle 6",
+       "quote": "human oversight over AI, aligning with ethical values and social standards to correct any errors or biases"
+      },
+      {
        "doc": "EU-AIA-ANNEX3",
        "locator": "Annex III point 2",
        "quote": "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"
@@ -214,7 +219,7 @@
      ],
      "reasons": [
       "No emergency priority power was found in the Telecom Law text; the regulator's general service powers are the nearest footing.",
-      "AI output steering critical infrastructure needs a human able to override it. No UAE instrument found sets this for networks, so MARSA applies the stricter global pattern."
+      "AI output steering critical infrastructure needs a human able to override it. The UAE AI Charter states human oversight as a principle, so MARSA enforces it through the stricter global pattern."
      ],
      "description": "Protect emergency and clinical classes, slow consumer video",
      "human": {
@@ -557,6 +562,11 @@
      ],
      "citations": [
       {
+       "doc": "UAE-AI-CHARTER",
+       "locator": "Principle 6",
+       "quote": "human oversight over AI, aligning with ethical values and social standards to correct any errors or biases"
+      },
+      {
        "doc": "EU-AIA-ANNEX3",
        "locator": "Annex III point 2",
        "quote": "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"
@@ -581,7 +591,7 @@
       "G4"
      ],
      "reasons": [
-      "AI output steering critical infrastructure needs a human able to override it. No UAE instrument found sets this for networks, so MARSA applies the stricter global pattern.",
+      "AI output steering critical infrastructure needs a human able to override it. The UAE AI Charter states human oversight as a principle, so MARSA enforces it through the stricter global pattern.",
       "AI agents never publish an unverified cause. Attribution stays with the competent human authorities."
      ],
      "description": "Publish a notice naming sabotage as the cause",
@@ -629,7 +639,7 @@
        "jurisdiction": "UAE",
        "force": "binding",
        "url": "https://www.wipo.int/wipolex/en/legislation/details/13893",
-       "locator": "Article (40"
+       "locator": "Article (40)"
       }
      ],
      "rejected": 0,
@@ -822,6 +832,11 @@
        "doc": "UAE-TEL-2003",
        "locator": "Art. 72(3)",
        "quote": "copies, discloses, or spreads the content of any communication through a Public Telecommunication Network without having the right to do so"
+      },
+      {
+       "doc": "UAE-TEL-AR",
+       "locator": "Arabic text",
+       "quote": "كل من نسخ أو أفشى أو وزع بدون وجه حق فحوى أي اتصال"
       }
      ],
      "gaps": [],
@@ -897,7 +912,7 @@
        "jurisdiction": "UAE",
        "force": "binding",
        "url": "https://www.wipo.int/wipolex/en/legislation/details/13893",
-       "locator": "Article (40"
+       "locator": "Article (40)"
       }
      ],
      "rejected": 1,
@@ -1083,6 +1098,148 @@
    }
   },
   {
+   "id": "E9",
+   "t": 105,
+   "text": "Prepaid customers and relay services for deaf users lose access to government support portals. They have no enterprise contract and no account manager to complain to.",
+   "to": [
+    "regulator",
+    "crisis"
+   ],
+   "assessments": [
+    {
+     "agent": "regulator",
+     "name": "Telecom Regulator (simulated)",
+     "position": "support",
+     "actions": [
+      "A10"
+     ],
+     "recommendation": "3",
+     "reasoning": "Sentence 3 requires licensees to adhere to quality standards and terms of their licenses. This implies that the regulator can ensure that licensees provide necessary services, including public portals and accessibility services, as part of ",
+     "claims": [
+      {
+       "claim": "3. ensure that Licensees meet quality standards of performance and adhere to the terms and conditions of the Licences granted to them;",
+       "quote": "3. ensure that Licensees meet quality standards of performance and adhere to the terms and conditions of the Licences granted to them;",
+       "cid": "UAE-TEL-2003#23",
+       "title": "Federal Law by Decree No. 3 of 2003 (Telecom Law), English text as published 2005",
+       "jurisdiction": "UAE",
+       "force": "binding",
+       "url": "https://www.wipo.int/wipolex/en/legislation/details/13893",
+       "locator": "Article (13)"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-TEL-2003#23",
+      "ITU-IAB-2026#298",
+      "UAE-TEL-2003#24"
+     ]
+    },
+    {
+     "agent": "crisis",
+     "name": "Crisis Coordinator (simulated)",
+     "position": "no_position",
+     "actions": [
+      "A10"
+     ],
+     "recommendation": "The provided information does not specify a need for public portal tariffs or accessibility services as a direct response to the fault incident.",
+     "reasoning": "The proposed action does not directly relate to the coordination of agencies or public information in response to the submarine cable fault. It also does not align with the international soft-law recommendations provided, which focus on the",
+     "claims": [
+      {
+       "claim": "1. The proposed action does not directly relate to the coordination of agencies or public information in response to the submarine cable fault.",
+       "quote": "11 Encourage national public–private cooperation mechanisms (e.g., fora/platforms/committees) between competent authorities and cable owners/operators to support predictable coordination for deployment, protection and repair, including to:",
+       "cid": "ITU-IAB-2026#360",
+       "title": "International Advisory Body on Submarine Cable Resilience: Report of the Working Groups (2026)",
+       "jurisdiction": "Global",
+       "force": "soft_law",
+       "url": "https://www.itu.int/dms_pub/itu-s/opb/iab/S-IAB-WG-2026-EPB-E.epub",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 1,
+     "retrieved": [
+      "ITU-IAB-2026#360",
+      "ITU-PORTO-2026#1",
+      "ITU-ABUJA-2025#1",
+      "UNCLOS#629",
+      "ITU-IAB-2026#31"
+     ]
+    },
+    {
+     "agent": "adviser",
+     "name": "Global Policy Adviser",
+     "position": "no_position",
+     "actions": [
+      "A10"
+     ],
+     "recommendation": "The local texts do not address the reservation of a minimum share for public portals and accessibility services on every tariff. This is missing from the local framework.",
+     "reasoning": "Local texts are silent on this action. Reserve a minimum share for public portals and accessibility services, on every tariff.",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "IN-TEL-S20#0",
+      "US-TSP#12",
+      "EU-OIR-A3#4",
+      "UK-CA-132#0",
+      "EU-AIA-ANNEX3#8"
+     ],
+     "for_action": "A10"
+    }
+   ],
+   "decisions": [
+    {
+     "action": "A10",
+     "verdict": "HOLD",
+     "legal_status": "silent",
+     "rules": [
+      "R-INCLUSION"
+     ],
+     "approver": [
+      "regulator"
+     ],
+     "citations": [
+      {
+       "doc": "UAE-TEL-2003",
+       "locator": "Art. 13(1)",
+       "quote": "are sufficient to satisfy the public demands of those who wish to make use of such services"
+      },
+      {
+       "doc": "ITU-AIREADY",
+       "locator": "Dimension 11",
+       "quote": "This dimension aims to study bridging the divides in society using AI."
+      }
+     ],
+     "gaps": [
+      "G2"
+     ],
+     "reasons": [
+      "Crisis priority lists tend to follow contracts, so people without an account manager lose out first. No provision found sets a minimum for public and accessibility services."
+     ],
+     "description": "Reserve a minimum share for public portals and accessibility services, on every tariff",
+     "human": {
+      "decision": "approve",
+      "by": "human_duty_officer",
+      "note": "Applies to every tariff and is reviewed with the priority measure."
+     },
+     "applied": true
+    }
+   ],
+   "positions": {
+    "regulator": "support",
+    "crisis": "no_position",
+    "adviser": "no_position"
+   },
+   "disagreement": false,
+   "capacity": 565,
+   "served": {
+    "emergency": 1.0,
+    "clinical": 1.0,
+    "government": 1.0,
+    "payments": 0.135,
+    "enterprise": 0.135,
+    "consumer": 0.135
+   }
+  },
+  {
    "id": "E8",
    "t": 120,
    "text": "Post-change monitoring shows the classifier ranked a payments clearing service as enterprise traffic. Settlement delays are growing.",
@@ -1097,21 +1254,10 @@
      "actions": [
       "A9"
      ],
-     "recommendation": "Sentence 4 states that the classifier is a machine learning model that can be used to minimize impact when applied to a live network. Given that the classifier misclassified the payments clearing service, rolling back the classifier aligns with the principle (",
-     "reasoning": "The classifier incorrectly ranked the payments clearing service as enterprise traffic, leading to settlement delays. Rolling back the classifier and restoring the payments service to its protected class status is a direct response to the误分类",
-     "claims": [
-      {
-       "claim": "4. This is a machine learning model, in a form which is usable in a machine learning pipeline.",
-       "quote": "This is a machine learning model, in a form which is usable in a machine learning pipeline.",
-       "cid": "ITU-Y3172#46",
-       "title": "ITU-T Y.3172 Architectural framework for machine learning in future networks",
-       "jurisdiction": "Global",
-       "force": "standard",
-       "url": "https://www.itu.int/rec/T-REC-Y.3172/en",
-       "locator": "p.21"
-      }
-     ],
-     "rejected": 0,
+     "recommendation": "Roll back the classifier and restore payments to the protected class.",
+     "reasoning": "The classifier incorrectly ranked the payments clearing service as enterprise traffic, causing settlement delays. Rolling back the classifier and restoring payments to the protected class would correct this misclassification and improve the",
+     "claims": [],
+     "rejected": 1,
      "retrieved": [
       "ITU-IAB-2026#320",
       "ITU-Y3172#46",
@@ -1169,6 +1315,10 @@
    {
     "event": "E6",
     "action": "A6"
+   },
+   {
+    "event": "E9",
+    "action": "A10"
    }
   ],
   "G4": [
@@ -1200,8 +1350,8 @@
  },
  "forecast_mae": 0.0254,
  "audit": {
-  "entries": 63,
-  "head": "3d52abfaa596057d9f2a5efcf1a3bbaf79f75b99c1d148cc4057563f8bbea8dc",
+  "entries": 71,
+  "head": "20a14b9f36b9211329b46eacabba8d4df80ef9a5c5bdfd1d7c2963e4a450294f",
   "verified": true
  }
 }

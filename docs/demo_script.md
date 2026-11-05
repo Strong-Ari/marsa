@@ -11,4 +11,4 @@ Required for shortlisted teams. Show the Incident Room page and a terminal.
    - T+120: classifier error, rollback expected ALLOW.
 4. **Judge's event, 45 s.** Run `--inject J1` and show the DENY citing Telecom Law Art. 72(3).
 5. **Tamper test, 30 s.** Edit one line of `audit.jsonl`, run verification, and show the chain break.
-6. **Gaps, 40 s.** G1, G3 and the proposed regulatory-policy function for Y.3172.
+6. **Gaps, 40 s.** G1, G3, the global comparison and the proposed regulatory-policy function for Y.3172.

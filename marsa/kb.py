@@ -12,7 +12,7 @@ import numpy as np, yaml
 ROOT = Path(__file__).resolve().parent.parent
 RAW, IDX = ROOT/"corpus"/"raw", ROOT/"kb"
 EMBED_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-ART = re.compile(r"(?m)^\s*(?:\*\*)?(Article\s*\(?\d+[A-Za-z]?\)?|Section\s+\d+[A-Z]*|Recommendation\s+\d+)\b")
+ART = re.compile(r"(?m)^\s*(?:\*\*)?(Article\s*\(?\d+[A-Za-z]?\)?|Section\s+\d+[A-Z]*|Recommendation\s+\d+|(?:ال)?مادة\s*\(?\s*[0-9٠-٩]+\s*\)?)")
 
 def norm(t): return re.sub(r"[ \t]+"," ",t.replace("\xa0"," ")).strip()
 
@@ -21,7 +21,7 @@ def parse(path: Path):
     s = path.suffix.lower()
     if s == ".pdf":
         import pymupdf
-        return [(i+1, p.get_text()) for i,p in enumerate(pymupdf.open(path))]
+        return [(i+1, p.get_text().replace("\ufffde","The").replace("\ufb01","fi")) for i,p in enumerate(pymupdf.open(path))]
     if s == ".docx":
         from docx import Document
         return [(1, "\n".join(p.text for p in Document(path).paragraphs))]
@@ -35,7 +35,7 @@ def parse(path: Path):
 def chunks(pages, size=200, overlap=30):
     article = None; out = []
     for page, text in pages:
-        paras = [re.sub(r"\s+"," ",p).strip() for p in re.split(r"\n\s*\n|(?=\n\s*Article\s*\(?\d)", text)]
+        paras = [re.sub(r"\s+"," ",p).strip() for p in re.split(r"\n\s*\n|(?=\n\s*(?:Article\s*\(?\d|(?:ال)?مادة))", text)]
         buf = []
         def flush():
             nonlocal buf
@@ -113,10 +113,12 @@ class KB:
             for r,i in enumerate(np.argsort(-b)[:n]):
                 if b[i]>0: score[i]+=1/(60+r)
         if boost_tier1!=1: score=np.where(self.tier1,score*boost_tier1,score)
-        out=[]
+        out=[]; per={}
         for i in np.argsort(-score):
             if score[i]<=0 or len(out)>=k: break
             r=self.recs[i]
+            if not docs and per.get(r["doc"],0)>=2: continue  # no single document may fill the results
+            per[r["doc"]]=per.get(r["doc"],0)+1
             if docs and r["doc"] not in docs: continue
             if role and role not in r["role"]: continue
             if jurisdiction and r["jurisdiction"] not in jurisdiction: continue

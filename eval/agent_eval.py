@@ -3,9 +3,9 @@ import json, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent.parent
 H={"UAE-EXTRACTS","HEALTH-NOTES","CMS-HEALTH","TAMIMI-HEALTH","TROWERS-HEALTH"}; P={"UAE-EXTRACTS","PDPL-NOTES","PDPL-GUIDE","EDPB-05-2021"}
-T={"UAE-TEL-2003"}; I={"ITU-IAB-2026","ITU-PORTO-2026","ITU-ABUJA-2025","UNCLOS"}; N={"ITU-IAB-2026","ITU-Y3172","ITU-Y3173"}
+T={"UAE-TEL-2003","UAE-TEL-AR"}; I={"ITU-IAB-2026","ITU-PORTO-2026","ITU-ABUJA-2025","UNCLOS"}; N={"ITU-IAB-2026","ITU-Y3172","ITU-Y3173"}
 EXP={("E1","netops"):N,("E2","netops"):N,("E2","regulator"):T,("E3","health"):H,("E4","netops"):N,("E4","health"):H,("E4","privacy"):P,("E5","crisis"):I,("E6","regulator"):T,
-     ("J1","netops"):N,("J1","privacy"):P,("J1","regulator"):T,("E7","netops"):N,("E7","regulator"):T|I,("E7","crisis"):I,("E8","netops"):N}
+     ("J1","netops"):N,("J1","privacy"):P,("J1","regulator"):T,("E7","netops"):N,("E7","regulator"):T|I,("E7","crisis"):I,("E8","netops"):N,("E9","regulator"):T,("E9","crisis"):I}
 COMP={"IN-TEL-S20","US-TSP","EU-OIR-A3","UK-CA-132","EU-AIA-ANNEX3","EU-AIA-ART14","EDPB-05-2021","ITU-IAB-2026"}
 def score(path):
     r=json.loads(Path(path).read_text()); hit=tot=withc=0; miss=[]; adv=[0,0]

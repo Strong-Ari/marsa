@@ -15,10 +15,11 @@ gaps:
 - id: G2
   title: No explicit emergency traffic-priority power
   kind: unclear_responsibility
-  finding: The Telecom Law text reviewed sets general service powers but no named emergency priority scheme, priority classes or decision-maker.
+  finding: The Telecom Law sets general service powers and a national-security direction power, but both its English 2005 text and its amended Arabic edition show no emergency, disaster, crisis or priority term, and no priority classes or decision-maker.
   tension: Equal treatment of users against protection of life-critical services
   local_evidence:
   - {doc: UAE-TEL-2003, quote: "the terms and level of services provided by the Licensees to users, including the standards and quality of service provided"}
+  - {doc: UAE-TEL-AR, quote: "وتقتضيها مصلحة الأمن القومي أو العلاقات الدولية"}
   global_examples:
   - {doc: IN-TEL-S20, why: "Statutory priority routing for authorised responders during a public emergency", quote: "messages of a user or group of users authorised for response and recovery during public emergency are routed on priority"}
   - {doc: US-TSP, why: "Pre-assigned restoration priority levels", quote: "for which provisioning or restoration priority levels are requested, assigned, and approved in accordance with this appendix"}
@@ -39,10 +40,10 @@ gaps:
 - id: G4
   title: Accountability for AI acting on critical networks
   kind: legislative_gap
-  finding: Global practice classes such AI as high risk and requires human override; the UAE instruments in this knowledge base set strategy, not a binding network-specific duty.
+  finding: Global practice classes such AI as high risk and requires human override. The UAE AI Charter states human oversight as a principle, but it does not mention telecoms or say who must hold the override on a network.
   tension: Speed of autonomous action against meaningful human control
   local_evidence:
-  - {doc: UAE-AI-2031, quote: "Ensure strong governance and effective regulation."}
+  - {doc: UAE-AI-CHARTER, quote: "human oversight over AI, aligning with ethical values and social standards to correct any errors or biases"}
   global_examples:
   - {doc: EU-AIA-ANNEX3, why: "High-risk class for critical digital infrastructure", quote: "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"}
   - {doc: EU-AIA-ART14, why: "Right to override", quote: "or to otherwise disregard, override or reverse the output of the high-risk AI system"}
