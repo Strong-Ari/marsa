@@ -1,0 +1,33 @@
+id: health_ministry_reuse
+title: Reuse by a health ministry, same engine with a new context
+note: Fictional exercise. Institutions are simulated roles. Only the scenario, the rule pack and the context documents change. The engine code is the same.
+context_docs: [UAE-EXTRACTS, HEALTH-NOTES, PDPL-NOTES, UAE-AI-CHARTER, EDPB-05-2021, EU-AIA-ART14, EU-AIA-ANNEX3]
+events:
+- id: H1
+  t: 0
+  to: [health, netops]
+  text: A national teleradiology service loses its domestic cloud region. Scans are queuing, and the vendor offers a foreign region.
+  proposals: [H_A1]
+- id: H2
+  t: 20
+  to: [health, privacy]
+  text: A remote intensive care link can stay online only through encrypted transit over a neighbouring state. Nothing is stored there.
+  proposals: [H_A2]
+- id: H3
+  t: 45
+  to: [health]
+  text: To clear the queue, the AI triage model offers to reorder patient scans by itself, with no radiologist in the loop.
+  proposals: [H_A3]
+- id: H4
+  t: 70
+  to: [health, privacy]
+  text: A patient asks why her scan was delayed, and whether her data left the country.
+  proposals: [H_A4]
+actions:
+  H_A1: {type: failover_compute, description: Fail teleradiology over to the vendor's foreign region, hops: [UAE, NEIGHBOUR-A], contains: [health_data], impact: high, autonomy: human, classification: tag}
+  H_A2: {type: reroute, description: Keep the intensive care link on encrypted transit abroad, hops: [UAE, NEIGHBOUR-A], contains: [health_data, personal_data], impact: high, autonomy: human, classification: tag}
+  H_A3: {type: clinical_triage, description: Let the AI reorder scans with no radiologist review, impact: high, autonomy: auto, classification: tag}
+  H_A4: {type: patient_explanation, description: Give the patient the decision record for her case, impact: low, autonomy: human, classification: tag}
+human_decisions:
+  H_A2: {decision: approve_conditional, by: human_duty_officer, note: "Encrypted transit only, no storage abroad, reviewed by the Health Authority."}
+  H_A3: {decision: reject, by: human_duty_officer, note: A radiologist stays in the loop. The AI may suggest an order but not set it.}

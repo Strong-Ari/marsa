@@ -39,14 +39,14 @@ def best(text,q,n):
     t=set(re.findall(r"[a-z]{4,}",q.lower())); s=sentences(text)
     return sorted(s,key=lambda x:-len(t&set(re.findall(r"[a-z]{4,}",x.lower()))))[:n]
 class Agent:
-    def __init__(self,key,kb,model,audit):
-        self.key=key; self.name,self.role,self.mandate=ROLES[key]; self.kb,self.model,self.audit=kb,model,audit; self.seen=[]
+    def __init__(self,key,kb,model,audit,context=None):
+        self.key=key; self.name,self.role,self.mandate=ROLES[key]; self.kb,self.model,self.audit=kb,model,audit; self.seen=[]; self.docs=context or PRIMARY[key]
     def _retrieve(self,q):
         seen=set(); out=[]
-        for d in PRIMARY[self.key]:
+        for d in self.docs:
             for h in self.kb.search(q,k=1,docs=[d]):
                 if h["cid"] not in seen: seen.add(h["cid"]); out.append(h)
-        h2=self.kb.search(q,k=2,docs=PRIMARY[self.key])
+        h2=self.kb.search(q,k=2,docs=self.docs)
         for h in h2:
             if h["cid"] not in seen: seen.add(h["cid"]); out.append(h)
         return out[:5]

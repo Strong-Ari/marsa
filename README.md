@@ -8,8 +8,8 @@ Policy-gated multi-agent crisis response for telecom networks
 
 [![ITU AI for Good Lab Hackathon UAE](https://img.shields.io/badge/ITU-AI%20for%20Good%20Lab%20Hackathon%20UAE-0d5c6e)](https://aiforgood.itu.int/event/ai-for-good-sandbox-hackathon-united-arab-emirates/)
 [![ITU-T Y.3172](https://img.shields.io/badge/aligned%20with-ITU--T%20Y.3172-176b45)](https://www.itu.int/rec/T-REC-Y.3172/en)
-[![Citations](https://img.shields.io/badge/legal%20citations%20verified-53%2F53-176b45)](#results)
-[![Tests](https://img.shields.io/badge/tests-12%20passing-176b45)](tests/test_core.py)
+[![Citations](https://img.shields.io/badge/legal%20citations%20verified-65%2F65-176b45)](#results)
+[![Tests](https://img.shields.io/badge/tests-13%20passing-176b45)](tests/test_core.py)
 [![Runs offline](https://img.shields.io/badge/runs-offline-8a5a00)](#quick-start)
 [![License: MIT](https://img.shields.io/badge/license-MIT-102c35)](LICENSE)
 
@@ -101,6 +101,20 @@ Gaps are stated at domain level, with the UAE as the worked example and global p
 
 Silence is measured, not assumed. [`marsa/absence.py`](marsa/absence.py) counts terms in each document, in English and Arabic. For example, Y.3172 has zero occurrences of "regulat", "legal" and "oversight", and the amended Arabic Telecom Law has none for emergency, crisis or priority. [`rules/matrix.yaml`](rules/matrix.yaml) compares eight jurisdictions, with a verified quote behind every filled cell.
 
+## Built to be reused
+
+A health ministry can adopt MARSA without new code. It swaps three things: the context documents, the scenario and the rule pack. The interface and the policy node stay the same, which cuts the cost of each new deployment.
+
+```bash
+python -m marsa.run --scenario scenarios/health_ministry_reuse.yaml --rules rules/packs/health_ministry.yaml --out runs/reuse
+```
+
+Any decision can also be explained afterwards from the audit record, for a customer or a patient:
+
+```bash
+python -m marsa.explain runs/final A2
+```
+
 ## Aligned with ITU-T Y.3172
 
 | Node | MARSA |
@@ -150,7 +164,7 @@ python -m marsa.viewer runs/final
 
 | Measure | Result |
 |---|---|
-| Legal citations in rules, gaps and the comparison matrix, found verbatim | **53 / 53** |
+| Legal citations in rules, gaps and the comparison matrix, found verbatim | **65 / 65** |
 | Retrieval hit@5 on 32 queries | **0.938** |
 | Retrieval mean reciprocal rank | **0.845** |
 | Arabic queries answered from English sources, hit@5 | **4 / 4** |

@@ -7,12 +7,12 @@ from .gateway import Gateway
 from .kb import KB
 from . import agents as A, llm, network as N
 ROOT=Path(__file__).resolve().parent.parent
-def run(scenario,backend="extractive",inject=(),out="runs/latest",quiet=False):
+def run(scenario,backend="extractive",inject=(),out="runs/latest",quiet=False,rules=None):
     sc=yaml.safe_load(Path(scenario).read_text()); out=ROOT/out; out.mkdir(parents=True,exist_ok=True)
     now={"t":0}; audit=Audit(out/"audit.jsonl",lambda:now["t"])
-    kb=KB(); model=llm.make(backend); gw=Gateway()
+    kb=KB(); model=llm.make(backend); gw=Gateway(rules) if rules else Gateway()
     paths=N.default_paths(); fm,mae=N.forecast_model()
-    agents={k:A.Agent(k,kb,model,audit) for k in A.ROLES}
+    agents={k:A.Agent(k,kb,model,audit,sc.get("context_docs")) for k in A.ROLES}
     audit.log("run_start","system",scenario=sc["id"],backend=model.name,chunks=len(kb.recs),rules=len(gw.rules),forecast_mae=round(mae,4))
     ev=list(sc["events"]); acts=dict(sc["actions"])
     for j in inject:
@@ -61,5 +61,5 @@ def run(scenario,backend="extractive",inject=(),out="runs/latest",quiet=False):
     return rec
 if __name__=="__main__":
     p=argparse.ArgumentParser(); p.add_argument("--scenario",default=str(ROOT/"scenarios/dual_cable_loss.yaml")); p.add_argument("--backend",default="extractive")
-    p.add_argument("--inject",action="append",default=[]); p.add_argument("--out",default="runs/latest"); a=p.parse_args()
-    r=run(a.scenario,a.backend,a.inject,a.out); print(json.dumps(r["audit"]),"gaps:",sorted(r["gaps_triggered"]))
+    p.add_argument("--inject",action="append",default=[]); p.add_argument("--rules"); p.add_argument("--out",default="runs/latest"); a=p.parse_args()
+    r=run(a.scenario,a.backend,a.inject,a.out,rules=a.rules); print(json.dumps(r["audit"]),"gaps:",sorted(r["gaps_triggered"]))

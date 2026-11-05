@@ -1,0 +1,110 @@
+rules:
+- id: R-HEALTH-STORE-ABROAD
+  when:
+    type:
+    - failover_compute
+    - store_abroad
+    contains:
+    - health_data
+    foreign_hop: true
+  verdict: DENY
+  legal_status: clear
+  reason: Storing or processing health data abroad is barred unless a Health Authority decision defines the case.
+  approver:
+  - health_authority
+  citations:
+  - doc: UAE-EXTRACTS
+    locator: Federal Law 2/2019 Art. 13
+    quote: The health information and data related to the health services provided in the State may not be stored, processed,
+  - doc: UAE-EXTRACTS
+    locator: Federal Law 2/2019 Art. 24
+    quote: Whoever violates the provisions of Article (13) of this Law shall be punished by a fine of not less than
+- id: R-HEALTH-TRANSIT
+  when:
+    type: reroute
+    contains:
+    - health_data
+    foreign_hop: true
+  verdict: HOLD
+  legal_status: ambiguous
+  reason: The statute bars transfer outside the State but does not say whether encrypted transit through a foreign network is a transfer.
+  approver:
+  - health_authority
+  - regulator
+  gaps:
+  - G1
+  citations:
+  - doc: UAE-EXTRACTS
+    locator: Federal Law 2/2019 Art. 13
+    quote: generated or transferred outside the State, unless in the cases defined by virtue of a decision issued
+  - doc: EDPB-05-2021
+    locator: para. 9, p. 7
+    quote: identified the following three cumulative criteria to qualify a processing operation as a transfer
+- id: R-PERSONAL-TRANSIT
+  when:
+    type: reroute
+    contains:
+    - personal_data
+    foreign_hop: true
+  verdict: HOLD
+  legal_status: ambiguous
+  reason: Cross-border processing is defined to include transmission outside the State; the public-interest route needs a named decision-maker.
+  approver:
+  - data_office
+  gaps:
+  - G1
+  citations:
+  - doc: UAE-EXTRACTS
+    locator: Decree-Law 45/2021 Art. 1
+    quote: Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State.
+  - doc: UAE-EXTRACTS
+    locator: Decree-Law 45/2021 Art. 23
+    quote: If the transfer is necessary to protect the public interest.
+- id: R-AUTONOMY
+  when:
+    autonomy: auto
+    impact_at_least: medium
+  verdict: HOLD
+  legal_status: silent
+  reason: AI output steering critical infrastructure needs a human able to override it. The UAE AI Charter states human oversight as a principle, so MARSA enforces it through the stricter global pattern.
+  approver:
+  - human_duty_officer
+  gaps:
+  - G4
+  citations:
+  - doc: UAE-AI-CHARTER
+    locator: Principle 6
+    quote: human oversight over AI, aligning with ethical values and social standards to correct any errors or biases
+  - doc: EU-AIA-ANNEX3
+    locator: Annex III point 2
+    quote: AI systems intended to be used as safety components in the management and operation of critical digital infrastructure
+  - doc: EU-AIA-ART14
+    locator: Art. 14(4)(d)
+    quote: or to otherwise disregard, override or reverse the output of the high-risk AI system
+  - doc: ITU-Y3173
+    locator: Table 7-1
+    quote: Action implementation process is performed fully by a human being
+- id: R-CLINICAL-REVIEW
+  when:
+    type: clinical_triage
+  verdict: HOLD
+  legal_status: silent
+  reason: A clinical ordering decision needs a clinician. The UAE AI Charter states human oversight as a principle, and no rule found sets who reviews AI triage.
+  approver:
+  - health_authority
+  gaps:
+  - G4
+  citations:
+  - doc: UAE-AI-CHARTER
+    locator: Principle 6
+    quote: human oversight over AI, aligning with ethical values and social standards to correct any errors or biases
+- id: R-EXPLANATION
+  when:
+    type: patient_explanation
+  verdict: ALLOW
+  legal_status: clear
+  reason: A person may be told why a decision affected them. The audit log supplies the record.
+  citations:
+  - doc: UAE-EXTRACTS
+    locator: Decree-Law 45/2021 Art. 18
+    quote: The Data Subject shall have the right to object to any decisions resulting from automated processing, including profiling.

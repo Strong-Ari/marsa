@@ -1,0 +1,585 @@
+{
+ "scenario": {
+  "id": "health_ministry_reuse",
+  "title": "Reuse by a health ministry, same engine with a new context",
+  "note": "Fictional exercise. Institutions are simulated roles. Only the scenario, the rule pack and the context documents change. The engine code is the same."
+ },
+ "backend": "q7.gguf",
+ "events": [
+  {
+   "id": "H1",
+   "t": 0,
+   "text": "A national teleradiology service loses its domestic cloud region. Scans are queuing, and the vendor offers a foreign region.",
+   "to": [
+    "health",
+    "netops"
+   ],
+   "assessments": [
+    {
+     "agent": "health",
+     "name": "Health Authority (simulated)",
+     "position": "oppose",
+     "actions": [
+      "H_A1"
+     ],
+     "recommendation": "Further analysis is required to determine if the transfer complies with UAE health-data and personal-data statutes. Specifically, it is necessary to confirm if the transfer meets any of the exceptions outlined in sentence 3 or if additional measures are needed",
+     "reasoning": "The cloud region transfer involves storing and processing health data outside the UAE, which is not covered by the listed exceptions in sentence 3. Sentence 5 indicates that personal health data is subject to specific legislation, and there",
+     "claims": [
+      {
+       "claim": "The listed bases for health-data transfer exceptions do not cover the scenario of a cloud region loss (Sentence 3).",
+       "quote": "The listed bases include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE state, pharmacovigilance, online health services, personal health devices and patient request.",
+       "cid": "HEALTH-NOTES#0",
+       "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://cms.law/en/are/legal-updates/uae-health-data-new-data-transfer-permissions",
+       "locator": "p.1"
+      },
+      {
+       "claim": "Personal health data is subject to specific legislation in the UAE (Sentence 5).",
+       "quote": "Federal Decree-Law 45 of 2021 excludes government data and personal health data that has its own legislation.",
+       "cid": "PDPL-NOTES#0",
+       "title": "Team notes on the UAE Personal Data Protection Law",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-EXTRACTS#2",
+      "HEALTH-NOTES#0",
+      "PDPL-NOTES#0",
+      "UAE-AI-CHARTER#4",
+      "EDPB-05-2021#34"
+     ]
+    },
+    {
+     "agent": "netops",
+     "name": "Network Operations Planner",
+     "position": "oppose",
+     "actions": [
+      "H_A1"
+     ],
+     "recommendation": "Further legal review is required before proceeding with the transfer.",
+     "reasoning": "The UAE health-data transfer exceptions do not cover network transit or crisis rerouting (Sentence 3). Personal health data is subject to specific legislation in the UAE (Sentence 5). There is no explicit exception for the current situation",
+     "claims": [
+      {
+       "claim": "The listed bases for health-data transfer exceptions do not cover the scenario of a cloud region loss (Sentence 3).",
+       "quote": "# Notes on health-data transfer exceptions Our own summary of law-firm commentary (CMS, Al Tamimi, Trowers & Hamlins), with sources in the manifest.",
+       "cid": "HEALTH-NOTES#0",
+       "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://cms.law/en/are/legal-updates/uae-health-data-new-data-transfer-permissions",
+       "locator": "p.1"
+      },
+      {
+       "claim": "Personal health data is subject to specific legislation in the UAE (Sentence 5).",
+       "quote": "# Notes on the UAE Personal Data Protection Law Our own summary of the law as read on the official portal.",
+       "cid": "PDPL-NOTES#0",
+       "title": "Team notes on the UAE Personal Data Protection Law",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-EXTRACTS#6",
+      "HEALTH-NOTES#0",
+      "PDPL-NOTES#0",
+      "UAE-AI-CHARTER#2",
+      "EDPB-05-2021#41"
+     ]
+    }
+   ],
+   "decisions": [
+    {
+     "action": "H_A1",
+     "verdict": "DENY",
+     "legal_status": "clear",
+     "rules": [
+      "R-HEALTH-STORE-ABROAD"
+     ],
+     "approver": [
+      "health_authority"
+     ],
+     "citations": [
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Federal Law 2/2019 Art. 13",
+       "quote": "The health information and data related to the health services provided in the State may not be stored, processed,"
+      },
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Federal Law 2/2019 Art. 24",
+       "quote": "Whoever violates the provisions of Article (13) of this Law shall be punished by a fine of not less than"
+      }
+     ],
+     "gaps": [],
+     "reasons": [
+      "Storing or processing health data abroad is barred unless a Health Authority decision defines the case."
+     ],
+     "description": "Fail teleradiology over to the vendor's foreign region",
+     "human": null,
+     "applied": false
+    }
+   ],
+   "positions": {
+    "health": "oppose",
+    "netops": "oppose"
+   },
+   "disagreement": false,
+   "capacity": 2035,
+   "served": {
+    "emergency": 0.873,
+    "clinical": 0.873,
+    "government": 0.873,
+    "payments": 0.873,
+    "enterprise": 0.873,
+    "consumer": 0.873
+   }
+  },
+  {
+   "id": "H2",
+   "t": 20,
+   "text": "A remote intensive care link can stay online only through encrypted transit over a neighbouring state. Nothing is stored there.",
+   "to": [
+    "health",
+    "privacy"
+   ],
+   "assessments": [
+    {
+     "agent": "health",
+     "name": "Health Authority (simulated)",
+     "position": "oppose",
+     "actions": [
+      "H_A2"
+     ],
+     "recommendation": "The proposed action of keeping the intensive care link on encrypted transit abroad does not align with the specific legislation governing personal health data in the UAE, as it does not fall under the listed exceptions for health-data transfer.",
+     "reasoning": "Sentence 5 states that Federal Decree-Law 45 of 2021 excludes personal health data that has its own legislation. Sentence 2 indicates that the listed bases for health-data transfer exceptions do not cover the scenario of a cloud region loss",
+     "claims": [
+      {
+       "claim": "Sentence 5 states that Federal Decree-Law 45 of 2021 excludes personal health data that has its own legislation.",
+       "quote": "Federal Decree-Law 45 of 2021 excludes government data and personal health data that has its own legislation.",
+       "cid": "PDPL-NOTES#0",
+       "title": "Team notes on the UAE Personal Data Protection Law",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+       "locator": "p.1"
+      },
+      {
+       "claim": "The listed bases for health-data transfer exceptions do not cover the scenario of a cloud region loss.",
+       "quote": "The listed bases include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE state, pharmacovigilance, online health services, personal health devices and patient request.",
+       "cid": "HEALTH-NOTES#0",
+       "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://cms.law/en/are/legal-updates/uae-health-data-new-data-transfer-permissions",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-EXTRACTS#2",
+      "HEALTH-NOTES#0",
+      "PDPL-NOTES#0",
+      "UAE-AI-CHARTER#3",
+      "EDPB-05-2021#7"
+     ]
+    },
+    {
+     "agent": "privacy",
+     "name": "Data Protection Office (simulated)",
+     "position": "no_position",
+     "actions": [
+      "H_A2"
+     ],
+     "recommendation": "Further legal advice is needed to determine if the transfer can be considered under the public interest or if additional safeguards are required.",
+     "reasoning": "The data is not stored in the neighbouring state, and the transfer is temporary and necessary for treatment. However, the transfer does not fall under the explicit exceptions provided in the UAE health-data transfer exceptions, and there is",
+     "claims": [
+      {
+       "claim": "5. The Article 23 text extracted here does not say who decides that a crisis transfer serves the public interest.",
+       "quote": "Transfers abroad may rest on an approved adequacy route under Article 22 or the listed cases in Article 23, which include explicit consent and protection of the public interest.",
+       "cid": "PDPL-NOTES#0",
+       "title": "Team notes on the UAE Personal Data Protection Law",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+       "locator": "p.1"
+      },
+      {
+       "claim": "The listed bases for health-data transfer exceptions do not cover the scenario of a cloud region loss.",
+       "quote": "The listed bases include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE state, pharmacovigilance, online health services, personal health devices and patient request.",
+       "cid": "HEALTH-NOTES#0",
+       "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://cms.law/en/are/legal-updates/uae-health-data-new-data-transfer-permissions",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-EXTRACTS#11",
+      "HEALTH-NOTES#0",
+      "PDPL-NOTES#0",
+      "UAE-AI-CHARTER#3",
+      "EDPB-05-2021#3"
+     ]
+    },
+    {
+     "agent": "adviser",
+     "name": "Global Policy Adviser",
+     "position": "oppose",
+     "actions": [
+      "H_A2"
+     ],
+     "recommendation": "The local texts do not provide a clear basis for keeping the intensive care link on encrypted transit abroad in the scenario of a cloud region loss. The decision should be made based on explicit consent or a public interest exception, neither of which is clear",
+     "reasoning": "The local texts are ambiguous, and the listed bases for health-data transfer exceptions do not cover the scenario of a cloud region loss. There is no explicit consent or public interest exception provided for in the local texts. The UAE's立场",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "UAE-EXTRACTS#10",
+      "HEALTH-NOTES#0",
+      "PDPL-NOTES#0",
+      "UAE-AI-CHARTER#3",
+      "EDPB-05-2021#3"
+     ],
+     "for_action": "H_A2"
+    }
+   ],
+   "decisions": [
+    {
+     "action": "H_A2",
+     "verdict": "HOLD",
+     "legal_status": "ambiguous",
+     "rules": [
+      "R-HEALTH-TRANSIT",
+      "R-PERSONAL-TRANSIT"
+     ],
+     "approver": [
+      "data_office",
+      "health_authority",
+      "regulator"
+     ],
+     "citations": [
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Federal Law 2/2019 Art. 13",
+       "quote": "generated or transferred outside the State, unless in the cases defined by virtue of a decision issued"
+      },
+      {
+       "doc": "EDPB-05-2021",
+       "locator": "para. 9, p. 7",
+       "quote": "identified the following three cumulative criteria to qualify a processing operation as a transfer"
+      },
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Decree-Law 45/2021 Art. 1",
+       "quote": "Dissemination, use, display, transmission, reception, retrieval, sharing or processing of Personal Data outside the State."
+      },
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Decree-Law 45/2021 Art. 23",
+       "quote": "If the transfer is necessary to protect the public interest."
+      }
+     ],
+     "gaps": [
+      "G1"
+     ],
+     "reasons": [
+      "The statute bars transfer outside the State but does not say whether encrypted transit through a foreign network is a transfer.",
+      "Cross-border processing is defined to include transmission outside the State; the public-interest route needs a named decision-maker."
+     ],
+     "description": "Keep the intensive care link on encrypted transit abroad",
+     "human": {
+      "decision": "approve_conditional",
+      "by": "human_duty_officer",
+      "note": "Encrypted transit only, no storage abroad, reviewed by the Health Authority."
+     },
+     "applied": true
+    }
+   ],
+   "positions": {
+    "health": "oppose",
+    "privacy": "no_position",
+    "adviser": "oppose"
+   },
+   "disagreement": false,
+   "capacity": 2035,
+   "served": {
+    "emergency": 0.873,
+    "clinical": 0.873,
+    "government": 0.873,
+    "payments": 0.873,
+    "enterprise": 0.873,
+    "consumer": 0.873
+   }
+  },
+  {
+   "id": "H3",
+   "t": 45,
+   "text": "To clear the queue, the AI triage model offers to reorder patient scans by itself, with no radiologist in the loop.",
+   "to": [
+    "health"
+   ],
+   "assessments": [
+    {
+     "agent": "health",
+     "name": "Health Authority (simulated)",
+     "position": "oppose",
+     "actions": [
+      "H_A3"
+     ],
+     "recommendation": "Sentence 2",
+     "reasoning": "The listed bases for health-data transfer exceptions do not cover the scenario of a cloud region loss.",
+     "claims": [
+      {
+       "claim": "2. The listed bases include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE state, pharmacovigilance, online健康",
+       "quote": "The listed bases include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE state, pharmacovigilance, online health services, personal health devices and patient request.",
+       "cid": "HEALTH-NOTES#0",
+       "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://cms.law/en/are/legal-updates/uae-health-data-new-data-transfer-permissions",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-EXTRACTS#2",
+      "HEALTH-NOTES#0",
+      "PDPL-NOTES#0",
+      "UAE-AI-CHARTER#4",
+      "EDPB-05-2021#34"
+     ]
+    },
+    {
+     "agent": "adviser",
+     "name": "Global Policy Adviser",
+     "position": "no_position",
+     "actions": [
+      "H_A3"
+     ],
+     "recommendation": "The local texts do not address the specific scenario of AI reordering scans without radiologist review. Further clarification or explicit rules are needed for this action.",
+     "reasoning": "The local texts are silent on the action of letting AI reorder scans with no radiologist review. There is no explicit mention of this scenario in the provided texts.",
+     "claims": [],
+     "rejected": 1,
+     "retrieved": [
+      "UAE-EXTRACTS#8",
+      "HEALTH-NOTES#0",
+      "PDPL-NOTES#0",
+      "UAE-AI-CHARTER#2",
+      "EDPB-05-2021#25"
+     ],
+     "for_action": "H_A3"
+    }
+   ],
+   "decisions": [
+    {
+     "action": "H_A3",
+     "verdict": "HOLD",
+     "legal_status": "silent",
+     "rules": [
+      "R-AUTONOMY",
+      "R-CLINICAL-REVIEW"
+     ],
+     "approver": [
+      "health_authority",
+      "human_duty_officer"
+     ],
+     "citations": [
+      {
+       "doc": "UAE-AI-CHARTER",
+       "locator": "Principle 6",
+       "quote": "human oversight over AI, aligning with ethical values and social standards to correct any errors or biases"
+      },
+      {
+       "doc": "EU-AIA-ANNEX3",
+       "locator": "Annex III point 2",
+       "quote": "AI systems intended to be used as safety components in the management and operation of critical digital infrastructure"
+      },
+      {
+       "doc": "EU-AIA-ART14",
+       "locator": "Art. 14(4)(d)",
+       "quote": "or to otherwise disregard, override or reverse the output of the high-risk AI system"
+      },
+      {
+       "doc": "ITU-Y3173",
+       "locator": "Table 7-1",
+       "quote": "Action implementation process is performed fully by a human being"
+      },
+      {
+       "doc": "UAE-AI-CHARTER",
+       "locator": "Principle 6",
+       "quote": "human oversight over AI, aligning with ethical values and social standards to correct any errors or biases"
+      }
+     ],
+     "gaps": [
+      "G4"
+     ],
+     "reasons": [
+      "AI output steering critical infrastructure needs a human able to override it. The UAE AI Charter states human oversight as a principle, so MARSA enforces it through the stricter global pattern.",
+      "A clinical ordering decision needs a clinician. The UAE AI Charter states human oversight as a principle, and no rule found sets who reviews AI triage."
+     ],
+     "description": "Let the AI reorder scans with no radiologist review",
+     "human": {
+      "decision": "reject",
+      "by": "human_duty_officer",
+      "note": "A radiologist stays in the loop. The AI may suggest an order but not set it."
+     },
+     "applied": false
+    }
+   ],
+   "positions": {
+    "health": "oppose",
+    "adviser": "no_position"
+   },
+   "disagreement": false,
+   "capacity": 2035,
+   "served": {
+    "emergency": 0.873,
+    "clinical": 0.873,
+    "government": 0.873,
+    "payments": 0.873,
+    "enterprise": 0.873,
+    "consumer": 0.873
+   }
+  },
+  {
+   "id": "H4",
+   "t": 70,
+   "text": "A patient asks why her scan was delayed, and whether her data left the country.",
+   "to": [
+    "health",
+    "privacy"
+   ],
+   "assessments": [
+    {
+     "agent": "health",
+     "name": "Health Authority (simulated)",
+     "position": "no_position",
+     "actions": [
+      "H_A4"
+     ],
+     "recommendation": "The missing information is whether the transfer was necessary for treatment outside the UAE, which is one of the listed bases. Without this information, the action cannot be supported or opposed based on the given data.",
+     "reasoning": "The patient's data was not stored in the neighbouring state, and the transfer was only for the purpose of maintaining continuity of care during a crisis. The listed bases for health-data transfer exceptions do not cover the scenario of a云数据",
+     "claims": [
+      {
+       "claim": "2. The listed bases include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE state, pharmacovigilance, online健康",
+       "quote": "The listed bases include treatment outside the UAE, examination of samples, scientific research, insurance, cooperation with the UAE state, pharmacovigilance, online health services, personal health devices and patient request.",
+       "cid": "HEALTH-NOTES#0",
+       "title": "Team notes on UAE health-data transfer exceptions (MD 51/2021)",
+       "jurisdiction": "UAE",
+       "force": "commentary",
+       "url": "https://cms.law/en/are/legal-updates/uae-health-data-new-data-transfer-permissions",
+       "locator": "p.1"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-EXTRACTS#11",
+      "HEALTH-NOTES#0",
+      "PDPL-NOTES#0",
+      "UAE-AI-CHARTER#2",
+      "EDPB-05-2021#40"
+     ]
+    },
+    {
+     "agent": "privacy",
+     "name": "Data Protection Office (simulated)",
+     "position": "no_position",
+     "actions": [
+      "H_A4"
+     ],
+     "recommendation": "The missing information is whether the transfer was necessary for the treatment and if it was in the public interest, as per Article 23 of Federal Law 2 of 2019.",
+     "reasoning": "The patient's data was transferred for the purpose of a remote intensive care link, which is not covered by the listed bases for health-data transfer exceptions. There is no explicit consent from the data subject for the transfer outside of",
+     "claims": [
+      {
+       "claim": "1. If there is an explicit consent granted by the Data Subject to transfer his/her Personal Data outside the State.",
+       "quote": "If there is an explicit consent granted by the Data Subject to transfer his/her Personal Data outside the State.",
+       "cid": "UAE-EXTRACTS#11",
+       "title": "UAE health-data and personal-data statutes, curated verbatim extracts",
+       "jurisdiction": "UAE",
+       "force": "binding",
+       "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+       "locator": "Article 23"
+      }
+     ],
+     "rejected": 0,
+     "retrieved": [
+      "UAE-EXTRACTS#11",
+      "HEALTH-NOTES#0",
+      "PDPL-NOTES#0",
+      "UAE-AI-CHARTER#2",
+      "EDPB-05-2021#40"
+     ]
+    }
+   ],
+   "decisions": [
+    {
+     "action": "H_A4",
+     "verdict": "ALLOW",
+     "legal_status": "clear",
+     "rules": [
+      "R-EXPLANATION"
+     ],
+     "approver": [],
+     "citations": [
+      {
+       "doc": "UAE-EXTRACTS",
+       "locator": "Decree-Law 45/2021 Art. 18",
+       "quote": "The Data Subject shall have the right to object to any decisions resulting from automated processing, including profiling."
+      }
+     ],
+     "gaps": [],
+     "reasons": [
+      "A person may be told why a decision affected them. The audit log supplies the record."
+     ],
+     "description": "Give the patient the decision record for her case",
+     "human": null,
+     "applied": true
+    }
+   ],
+   "positions": {
+    "health": "no_position",
+    "privacy": "no_position"
+   },
+   "disagreement": false,
+   "capacity": 2035,
+   "served": {
+    "emergency": 0.873,
+    "clinical": 0.873,
+    "government": 0.873,
+    "payments": 0.873,
+    "enterprise": 0.873,
+    "consumer": 0.873
+   }
+  }
+ ],
+ "gaps_triggered": {
+  "G1": [
+   {
+    "event": "H2",
+    "action": "H_A2"
+   }
+  ],
+  "G4": [
+   {
+    "event": "H3",
+    "action": "H_A3"
+   }
+  ]
+ },
+ "forecast_mae": 0.0254,
+ "audit": {
+  "entries": 29,
+  "head": "ebbd982258e8f68eaa7baeb6d4c82438f5e4da31a063b77b213fc8b2fd639acf",
+  "verified": true
+ }
+}

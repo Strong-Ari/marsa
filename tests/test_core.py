@@ -37,3 +37,8 @@ def test_claim_pinned_on_unrelated_quote_rejected():
     got={"D#1":{"text":"Repair ships need clearance from coastal authorities before entering waters."}}
     c={"claim":"Hospitals may send patient records abroad in a crisis.","cid":"D#1","quote":"Repair ships need clearance from coastal authorities"}
     assert evidence.gate([c],got)[1][0]["gate"]=="claim_not_supported_by_quote"
+
+def test_new_context_runs_on_the_same_gateway():
+    H=yaml.safe_load(open("scenarios/health_ministry_reuse.yaml"))["actions"]; g=Gateway("rules/packs/health_ministry.yaml")
+    v=lambda k:g.evaluate(dict(H[k],id=k))
+    assert v("H_A1")["verdict"]=="DENY" and v("H_A2")["verdict"]=="HOLD" and v("H_A3")["verdict"]=="HOLD" and v("H_A4")["verdict"]=="ALLOW"

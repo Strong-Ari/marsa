@@ -10,6 +10,8 @@ def main():
     items=[]
     for r in yaml.safe_load((ROOT/"rules/policy_rules.yaml").read_text())["rules"]:
         items+=[(r["id"],c) for c in r.get("citations",[])]
+    for r in yaml.safe_load((ROOT/"rules/packs/health_ministry.yaml").read_text())["rules"]:
+        items+=[(r["id"],c) for c in r.get("citations",[])]
     for g in yaml.safe_load((ROOT/"rules/gaps.yaml").read_text())["gaps"]:
         items+=[(g["id"],c) for c in g.get("local_evidence",[])+g.get("global_examples",[])]
     for g,row in yaml.safe_load((ROOT/"rules/matrix.yaml").read_text())["rows"].items():
