@@ -22,6 +22,6 @@ def main(a="runs/final",out="viewer/marsa_incident_room.html"):
        "chunks":[{k:c.get(k) for k in ("text","title","article","page","force","jurisdiction")} for c in map(json.loads,(ROOT/"kb/chunks.jsonl").open()) if c["tier"]==1],"rules":yaml.safe_load((ROOT/"rules/policy_rules.yaml").read_text())["rules"],"agent_eval":r("eval/agent_results.json")[a],"eval":r("eval/results.json"),"mapping":MAP,
        "inventory":[x for x in r("kb/inventory.json") if x["tier"]==1],
        "audit":[json.loads(l) for l in (ROOT/a/"audit.jsonl").open()]}
-    t=(ROOT/"viewer/template.html").read_text().replace("/*__DATA__*/null",json.dumps(d,ensure_ascii=False).replace("</","<\\/"))
+    t=(ROOT/"viewer/template.html").read_text().replace("/*__DATA__*/null",json.dumps(d,ensure_ascii=False).replace("</","<\\/").replace("\ufffd"," "))
     (ROOT/out).write_text(t); print(out,len(t))
 if __name__=="__main__": main(*sys.argv[1:])
