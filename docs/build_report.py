@@ -81,7 +81,8 @@ q=after(q,f"Hybrid retrieval reached hit@5 {R['hit@5']} and MRR {R['mrr']} on {E
 B="https://github.com/Strong-Ari/marsa"
 LINKS=[("Source code, GitHub repository",B),("Knowledge base, indexed policies, laws and strategies",B+"/tree/main/kb"),("Source inventory with origins and hashes",B+"/blob/main/kb/inventory.json"),("Policy rules and gap catalogue",B+"/tree/main/rules"),("Global comparison matrix",B+"/blob/main/rules/matrix.yaml"),("Crisis scenario",B+"/blob/main/scenarios/dual_cable_loss.yaml"),("Full run: audit log and after-action report",B+"/tree/main/runs/final"),("Demo video, 70 seconds, captioned",B+"/blob/main/docs/media/marsa_demo.mp4"),("Interactive Incident Room page (download and open)",B+"/blob/main/viewer/marsa_incident_room.html"),("Proposed Y.3172 regulatory-policy function",B+"/blob/main/docs/y3172_regulatory_policy_function.md")]
 q=after(q,"",bold_lead="Submission links",model=BODY)
-for a,b in LINKS: q=after(q,b,bold_lead=a+": ",model=BODY,size=9.5)
+for a,b in LINKS:
+    q=after(q,b,bold_lead=a+": ",model=BODY,size=9.5); q.alignment=0; q.paragraph_format.space_after=Pt(2)
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 for pp in d.paragraphs:
